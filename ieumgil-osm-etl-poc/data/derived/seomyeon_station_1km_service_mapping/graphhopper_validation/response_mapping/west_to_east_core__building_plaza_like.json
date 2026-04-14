@@ -1,0 +1,538 @@
+{
+  "scenarioName": "west_to_east_core",
+  "caseName": "building_plaza_like",
+  "requestContext": {
+    "start": {
+      "rawLocation": {
+        "lat": 35.1581373,
+        "lng": 129.0486875
+      },
+      "snappedRouteAnchor": {
+        "lat": 35.1582061,
+        "lng": 129.0484321
+      },
+      "locationContext": "NEAR_WALKABLE_NETWORK",
+      "snapDistanceMeter": 24.44544153699157
+    },
+    "end": {
+      "rawLocation": {
+        "lat": 35.1558845,
+        "lng": 129.0709771
+      },
+      "snappedRouteAnchor": {
+        "lat": 35.1560125,
+        "lng": 129.0714143
+      },
+      "locationContext": "NEAR_WALKABLE_NETWORK",
+      "snapDistanceMeter": 42.21593673050515
+    },
+    "serviceDecision": "WARN",
+    "decisionReason": "Route is possible but snap distance is larger than normal GPS error",
+    "insideBuildingSupport": {
+      "supportedInStep9": false,
+      "reason": "Building polygon or entrance data is required to distinguish indoor locations from nearby walkable space."
+    }
+  },
+  "responseDraft": {
+    "success": true,
+    "data": {
+      "routes": [
+        {
+          "routeOption": "SHORTEST",
+          "title": "기본 보행 경로",
+          "distanceMeter": 2908.841,
+          "estimatedTimeMinute": 35,
+          "riskLevel": null,
+          "segments": [
+            {
+              "sequence": 1,
+              "geometry": "LINESTRING(129.0484320 35.1582060, 129.0485290 35.1584470)",
+              "distanceMeter": 28.156,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Continue onto 가야대로703번길"
+            },
+            {
+              "sequence": 2,
+              "geometry": "LINESTRING(129.0485290 35.1584470, 129.0495570 35.1584190, 129.0496700 35.1583920, 129.0497240 35.1583470)",
+              "distanceMeter": 111.191,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right"
+            },
+            {
+              "sequence": 3,
+              "geometry": "LINESTRING(129.0497240 35.1583470, 129.0500880 35.1583250, 129.0502270 35.1582930, 129.0503770 35.1583020)",
+              "distanceMeter": 60.021,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn slight left onto 신천대로183번길"
+            },
+            {
+              "sequence": 4,
+              "geometry": "LINESTRING(129.0503770 35.1583020, 129.0504280 35.1581210, 129.0505340 35.1576500)",
+              "distanceMeter": 74.01,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 신천대로"
+            },
+            {
+              "sequence": 5,
+              "geometry": "LINESTRING(129.0505340 35.1576500, 129.0509040 35.1577350)",
+              "distanceMeter": 34.947,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left"
+            },
+            {
+              "sequence": 6,
+              "geometry": "LINESTRING(129.0509040 35.1577350, 129.0508840 35.1576640, 129.0509300 35.1574780)",
+              "distanceMeter": 29.228,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn sharp right"
+            },
+            {
+              "sequence": 7,
+              "geometry": "LINESTRING(129.0509300 35.1574780, 129.0512470 35.1575300, 129.0515000 35.1575420)",
+              "distanceMeter": 52.406,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 가야대로"
+            },
+            {
+              "sequence": 8,
+              "geometry": "LINESTRING(129.0515000 35.1575420, 129.0519410 35.1575060, 129.0523710 35.1574910, 129.0529900 35.1574930)",
+              "distanceMeter": 135.713,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Keep right"
+            },
+            {
+              "sequence": 9,
+              "geometry": "LINESTRING(129.0529900 35.1574930, 129.0534590 35.1567530, 129.0534900 35.1566690, 129.0535760 35.1565450, 129.0536720 35.1563500, 129.0537910 35.1561540, 129.0538370 35.1560830, 129.0539420 35.1559860)",
+              "distanceMeter": 189.218,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 가야대로746번길"
+            },
+            {
+              "sequence": 10,
+              "geometry": "LINESTRING(129.0539420 35.1559860, 129.0539790 35.1558580)",
+              "distanceMeter": 14.686,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn slight right onto 가야대로750번길"
+            },
+            {
+              "sequence": 11,
+              "geometry": "LINESTRING(129.0539790 35.1558580, 129.0547650 35.1558810, 129.0562640 35.1558830)",
+              "distanceMeter": 207.826,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 부전로65번길"
+            },
+            {
+              "sequence": 12,
+              "geometry": "LINESTRING(129.0562640 35.1558830, 129.0562660 35.1560040)",
+              "distanceMeter": 13.422,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left"
+            },
+            {
+              "sequence": 13,
+              "geometry": "LINESTRING(129.0562660 35.1560040, 129.0567320 35.1560120, 129.0568130 35.1560360, 129.0568980 35.1561110, 129.0570190 35.1561960, 129.0570680 35.1562550, 129.0570790 35.1563300, 129.0570820 35.1567580, 129.0570990 35.1567890, 129.0571300 35.1568070, 129.0571950 35.1568270)",
+              "distanceMeter": 153.606,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right"
+            },
+            {
+              "sequence": 14,
+              "geometry": "LINESTRING(129.0571950 35.1568270, 129.0577040 35.1568330)",
+              "distanceMeter": 46.289,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn slight right"
+            },
+            {
+              "sequence": 15,
+              "geometry": "LINESTRING(129.0577040 35.1568330, 129.0576990 35.1569690)",
+              "distanceMeter": 15.063,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left"
+            },
+            {
+              "sequence": 16,
+              "geometry": "LINESTRING(129.0576990 35.1569690, 129.0577710 35.1569690)",
+              "distanceMeter": 6.618,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right"
+            },
+            {
+              "sequence": 17,
+              "geometry": "LINESTRING(129.0577710 35.1569690, 129.0577720 35.1569570)",
+              "distanceMeter": 1.29,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 서면로"
+            },
+            {
+              "sequence": 18,
+              "geometry": "LINESTRING(129.0577720 35.1569570, 129.0583760 35.1564400)",
+              "distanceMeter": 79.58,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Keep left onto 서면로68번길"
+            },
+            {
+              "sequence": 19,
+              "geometry": "LINESTRING(129.0583760 35.1564400, 129.0598740 35.1564270)",
+              "distanceMeter": 136.204,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Keep left"
+            },
+            {
+              "sequence": 20,
+              "geometry": "LINESTRING(129.0598740 35.1564270, 129.0599510 35.1565020)",
+              "distanceMeter": 10.871,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 서전로10번길"
+            },
+            {
+              "sequence": 21,
+              "geometry": "LINESTRING(129.0599510 35.1565020, 129.0600800 35.1564070, 129.0602140 35.1562540, 129.0603080 35.1561250, 129.0604300 35.1559060)",
+              "distanceMeter": 80.116,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 서전로10번길"
+            },
+            {
+              "sequence": 22,
+              "geometry": "LINESTRING(129.0604300 35.1559060, 129.0605900 35.1557030, 129.0606610 35.1555610, 129.0607210 35.1553560)",
+              "distanceMeter": 67.412,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Continue onto 중앙대로702번길"
+            },
+            {
+              "sequence": 23,
+              "geometry": "LINESTRING(129.0607210 35.1553560, 129.0652760 35.1553930)",
+              "distanceMeter": 414.109,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 중앙대로702번길"
+            },
+            {
+              "sequence": 24,
+              "geometry": "LINESTRING(129.0652760 35.1553930, 129.0652750 35.1554870)",
+              "distanceMeter": 10.431,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 전포대로"
+            },
+            {
+              "sequence": 25,
+              "geometry": "LINESTRING(129.0652750 35.1554870, 129.0654690 35.1554870)",
+              "distanceMeter": 17.655,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right"
+            },
+            {
+              "sequence": 26,
+              "geometry": "LINESTRING(129.0654690 35.1554870, 129.0654660 35.1557700)",
+              "distanceMeter": 31.502,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 전포대로"
+            },
+            {
+              "sequence": 27,
+              "geometry": "LINESTRING(129.0654660 35.1557700, 129.0661410 35.1557720)",
+              "distanceMeter": 61.347,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 전포대로216번길"
+            },
+            {
+              "sequence": 28,
+              "geometry": "LINESTRING(129.0661410 35.1557720, 129.0661380 35.1561410)",
+              "distanceMeter": 41.065,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 서전로58번길"
+            },
+            {
+              "sequence": 29,
+              "geometry": "LINESTRING(129.0661380 35.1561410, 129.0672200 35.1561510)",
+              "distanceMeter": 98.372,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 서전로68번길"
+            },
+            {
+              "sequence": 30,
+              "geometry": "LINESTRING(129.0672200 35.1561510, 129.0672170 35.1568930)",
+              "distanceMeter": 82.507,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 서전로68번길"
+            },
+            {
+              "sequence": 31,
+              "geometry": "LINESTRING(129.0672170 35.1568930, 129.0683270 35.1569060)",
+              "distanceMeter": 100.967,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 동성로71번길"
+            },
+            {
+              "sequence": 32,
+              "geometry": "LINESTRING(129.0683270 35.1569060, 129.0683110 35.1571690)",
+              "distanceMeter": 29.202,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 동성로"
+            },
+            {
+              "sequence": 33,
+              "geometry": "LINESTRING(129.0683110 35.1571690, 129.0695260 35.1571290, 129.0696660 35.1571360)",
+              "distanceMeter": 123.25,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 동성로76번길"
+            },
+            {
+              "sequence": 34,
+              "geometry": "LINESTRING(129.0696660 35.1571360, 129.0697170 35.1570780, 129.0697870 35.1570450, 129.0698690 35.1570480, 129.0699340 35.1570880, 129.0699610 35.1571510, 129.0699420 35.1572150, 129.0698970 35.1572680, 129.0698600 35.1574420, 129.0698650 35.1575360, 129.0699000 35.1575940, 129.0699550 35.1576190, 129.0703250 35.1577050, 129.0704100 35.1577000, 129.0705000 35.1576560, 129.0705470 35.1575900, 129.0705670 35.1574930, 129.0706320 35.1572900, 129.0707830 35.1570920, 129.0709740 35.1567870, 129.0711250 35.1564890, 129.0711730 35.1563510, 129.0712440 35.1562610, 129.0713290 35.1562080)",
+              "distanceMeter": 327.482,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 동성로76번길"
+            },
+            {
+              "sequence": 35,
+              "geometry": "LINESTRING(129.0713290 35.1562080, 129.0714140 35.1560120)",
+              "distanceMeter": 23.079,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn slight right onto 진남로"
+            }
+          ]
+        }
+      ]
+    },
+    "message": null
+  },
+  "mappingNotes": {
+    "mappingStatus": "PARTIAL",
+    "validatedRouteOption": "SHORTEST",
+    "fieldSource": {
+      "routes[].distanceMeter": "GraphHopper paths[].distance",
+      "routes[].estimatedTimeMinute": "GraphHopper paths[].time with ceil-minute conversion",
+      "routes[].segments[].geometry": "GraphHopper instruction interval sliced from paths[].points",
+      "routes[].segments[].distanceMeter": "GraphHopper instructions[].distance",
+      "routes[].segments[].guidanceMessage": "GraphHopper instructions[].text",
+      "requestContext.rawLocation": "Client input coordinates",
+      "requestContext.snappedRouteAnchor": "GraphHopper nearest/route snapped result",
+      "requestContext.locationContext": "Step 8 snap-distance based interpretation rule"
+    },
+    "requiresPostProcessing": [
+      "routes[].riskLevel",
+      "routes[].segments[].hasStairs",
+      "routes[].segments[].hasCurbGap",
+      "routes[].segments[].hasCrosswalk",
+      "routes[].segments[].hasSignal",
+      "routes[].segments[].hasAudioSignal",
+      "routes[].segments[].hasBrailleBlock",
+      "routes[].segments[].riskLevel"
+    ],
+    "notes": [
+      "GraphHopper route output does not directly expose service road_segments IDs in the current PoC setup.",
+      "Instruction-based segments can be created, but segment-level safety attributes require road_segments join or additional public data.",
+      "INSIDE_BUILDING cannot be derived reliably in Step 9 without building polygon or entrance data.",
+      "Service decision for this case is WARN and must be handled separately from route engine success."
+    ]
+  }
+}

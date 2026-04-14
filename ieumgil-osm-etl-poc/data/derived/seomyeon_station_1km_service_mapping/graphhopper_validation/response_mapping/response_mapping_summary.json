@@ -1,0 +1,46 @@
+{
+  "selected_cases": [
+    {
+      "scenarioName": "west_to_east_core",
+      "caseName": "exact_reference",
+      "serviceDecision": "ACCEPT",
+      "responseSuccess": true,
+      "startLocationContext": "ON_WALKABLE_NETWORK",
+      "endLocationContext": "ON_WALKABLE_NETWORK",
+      "outputFile": "west_to_east_core__exact_reference.json"
+    },
+    {
+      "scenarioName": "west_to_east_core",
+      "caseName": "building_plaza_like",
+      "serviceDecision": "WARN",
+      "responseSuccess": true,
+      "startLocationContext": "NEAR_WALKABLE_NETWORK",
+      "endLocationContext": "NEAR_WALKABLE_NETWORK",
+      "outputFile": "west_to_east_core__building_plaza_like.json"
+    },
+    {
+      "scenarioName": "south_to_north_core",
+      "caseName": "in_bounds_large_snap",
+      "serviceDecision": "REJECT",
+      "responseSuccess": true,
+      "startLocationContext": "OUT_OF_SERVICE_AREA",
+      "endLocationContext": "ON_WALKABLE_NETWORK",
+      "outputFile": "south_to_north_core__in_bounds_large_snap.json"
+    },
+    {
+      "scenarioName": "west_to_east_core",
+      "caseName": "out_of_bounds_far",
+      "serviceDecision": "REJECT",
+      "responseSuccess": false,
+      "startLocationContext": "OUT_OF_SERVICE_AREA",
+      "endLocationContext": "ON_WALKABLE_NETWORK",
+      "outputFile": "west_to_east_core__out_of_bounds_far.json"
+    }
+  ],
+  "contextRule": {
+    "ON_WALKABLE_NETWORK": "snap distance <= 10.0m",
+    "NEAR_WALKABLE_NETWORK": "snap distance > 10.0m and <= 80.0m",
+    "OUT_OF_SERVICE_AREA": "nearest failed or snap distance > 80.0m",
+    "INSIDE_BUILDING": "Not derivable in Step 9 without external spatial data"
+  }
+}

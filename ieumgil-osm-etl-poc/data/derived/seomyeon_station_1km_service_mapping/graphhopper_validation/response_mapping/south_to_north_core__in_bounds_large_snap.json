@@ -1,0 +1,239 @@
+{
+  "scenarioName": "south_to_north_core",
+  "caseName": "in_bounds_large_snap",
+  "requestContext": {
+    "start": {
+      "rawLocation": {
+        "lat": 35.1568106,
+        "lng": 129.0768375
+      },
+      "snappedRouteAnchor": {
+        "lat": 35.1571317,
+        "lng": 129.0777607
+      },
+      "locationContext": "OUT_OF_SERVICE_AREA",
+      "snapDistanceMeter": 91.2069272611411
+    },
+    "end": {
+      "rawLocation": {
+        "lat": 35.1664222,
+        "lng": 129.0639263
+      },
+      "snappedRouteAnchor": {
+        "lat": 35.1664222,
+        "lng": 129.0639263
+      },
+      "locationContext": "ON_WALKABLE_NETWORK",
+      "snapDistanceMeter": 0.0
+    },
+    "serviceDecision": "REJECT",
+    "decisionReason": "Snap distance is too large for reliable user intent",
+    "insideBuildingSupport": {
+      "supportedInStep9": false,
+      "reason": "Building polygon or entrance data is required to distinguish indoor locations from nearby walkable space."
+    }
+  },
+  "responseDraft": {
+    "success": true,
+    "data": {
+      "routes": [
+        {
+          "routeOption": "SHORTEST",
+          "title": "기본 보행 경로",
+          "distanceMeter": 2551.219,
+          "estimatedTimeMinute": 31,
+          "riskLevel": null,
+          "segments": [
+            {
+              "sequence": 1,
+              "geometry": "LINESTRING(129.0777610 35.1571320, 129.0777280 35.1571940, 129.0777130 35.1573940, 129.0776660 35.1577510, 129.0776780 35.1578190, 129.0778020 35.1580550, 129.0778190 35.1581990, 129.0777920 35.1582710, 129.0777240 35.1583470, 129.0776020 35.1584270)",
+              "distanceMeter": 155.074,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Continue onto 진남로328번길"
+            },
+            {
+              "sequence": 2,
+              "geometry": "LINESTRING(129.0776020 35.1584270, 129.0774290 35.1584330, 129.0773100 35.1584510, 129.0770800 35.1584680, 129.0768940 35.1585200, 129.0768390 35.1585280, 129.0767890 35.1584890, 129.0767530 35.1583260, 129.0766910 35.1582150, 129.0764050 35.1581290, 129.0756490 35.1580080, 129.0756120 35.1579780, 129.0756360 35.1576140)",
+              "distanceMeter": 251.9,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Keep left onto 진남로328번길"
+            },
+            {
+              "sequence": 3,
+              "geometry": "LINESTRING(129.0756360 35.1576140, 129.0755380 35.1575920, 129.0752220 35.1575560, 129.0750730 35.1575870, 129.0749650 35.1575940, 129.0748770 35.1575470, 129.0745160 35.1574130, 129.0742910 35.1574040, 129.0742240 35.1573750, 129.0741470 35.1572900, 129.0740670 35.1572400, 129.0739780 35.1571990, 129.0738830 35.1571860, 129.0735920 35.1571930, 129.0734790 35.1572120, 129.0733530 35.1572650, 129.0730260 35.1572800, 129.0726480 35.1573570, 129.0725820 35.1573860)",
+              "distanceMeter": 295.818,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right"
+            },
+            {
+              "sequence": 4,
+              "geometry": "LINESTRING(129.0725820 35.1573860, 129.0726560 35.1574250, 129.0727530 35.1575450, 129.0728010 35.1576790, 129.0727850 35.1578150, 129.0725690 35.1582740, 129.0723020 35.1587690, 129.0721090 35.1590850, 129.0718910 35.1593590, 129.0715880 35.1597710, 129.0713500 35.1600500, 129.0711650 35.1602140, 129.0710230 35.1603590, 129.0707380 35.1605630, 129.0705630 35.1606750)",
+              "distanceMeter": 436.528,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn sharp right onto 진남로356번길"
+            },
+            {
+              "sequence": 5,
+              "geometry": "LINESTRING(129.0705630 35.1606750, 129.0702880 35.1609960, 129.0694150 35.1614240, 129.0692840 35.1615370, 129.0691430 35.1618360, 129.0691090 35.1619730, 129.0690670 35.1622710)",
+              "distanceMeter": 237.921,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn slight right onto 진남로"
+            },
+            {
+              "sequence": 6,
+              "geometry": "LINESTRING(129.0690670 35.1622710, 129.0686840 35.1623500)",
+              "distanceMeter": 35.933,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left"
+            },
+            {
+              "sequence": 7,
+              "geometry": "LINESTRING(129.0686840 35.1623500, 129.0684210 35.1623930, 129.0675690 35.1625810)",
+              "distanceMeter": 104.66,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Continue onto 진남로425번길"
+            },
+            {
+              "sequence": 8,
+              "geometry": "LINESTRING(129.0675690 35.1625810, 129.0676190 35.1629510, 129.0676240 35.1632710)",
+              "distanceMeter": 76.938,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right onto 동성로112번길"
+            },
+            {
+              "sequence": 9,
+              "geometry": "LINESTRING(129.0676240 35.1632710, 129.0654240 35.1632620)",
+              "distanceMeter": 199.987,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn left onto 전포대로298번길"
+            },
+            {
+              "sequence": 10,
+              "geometry": "LINESTRING(129.0654240 35.1632620, 129.0653210 35.1633450, 129.0650220 35.1634760, 129.0646950 35.1636310, 129.0639740 35.1639960, 129.0636710 35.1641420, 129.0629180 35.1645390, 129.0621640 35.1649460, 129.0611320 35.1655360)",
+              "distanceMeter": 465.468,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Keep right onto 전포대로"
+            },
+            {
+              "sequence": 11,
+              "geometry": "LINESTRING(129.0611320 35.1655360, 129.0618380 35.1658780)",
+              "distanceMeter": 74.626,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn sharp right onto 범전로32번길"
+            },
+            {
+              "sequence": 12,
+              "geometry": "LINESTRING(129.0618380 35.1658780, 129.0619060 35.1657840, 129.0619900 35.1657400, 129.0626110 35.1659490, 129.0627740 35.1659200, 129.0629210 35.1659690, 129.0632310 35.1661140, 129.0634990 35.1662150, 129.0639260 35.1664220)",
+              "distanceMeter": 216.366,
+              "hasStairs": null,
+              "hasCurbGap": null,
+              "hasCrosswalk": null,
+              "hasSignal": null,
+              "hasAudioSignal": null,
+              "hasBrailleBlock": null,
+              "riskLevel": null,
+              "guidanceMessage": "Turn right"
+            }
+          ]
+        }
+      ]
+    },
+    "message": null
+  },
+  "mappingNotes": {
+    "mappingStatus": "PARTIAL",
+    "validatedRouteOption": "SHORTEST",
+    "fieldSource": {
+      "routes[].distanceMeter": "GraphHopper paths[].distance",
+      "routes[].estimatedTimeMinute": "GraphHopper paths[].time with ceil-minute conversion",
+      "routes[].segments[].geometry": "GraphHopper instruction interval sliced from paths[].points",
+      "routes[].segments[].distanceMeter": "GraphHopper instructions[].distance",
+      "routes[].segments[].guidanceMessage": "GraphHopper instructions[].text",
+      "requestContext.rawLocation": "Client input coordinates",
+      "requestContext.snappedRouteAnchor": "GraphHopper nearest/route snapped result",
+      "requestContext.locationContext": "Step 8 snap-distance based interpretation rule"
+    },
+    "requiresPostProcessing": [
+      "routes[].riskLevel",
+      "routes[].segments[].hasStairs",
+      "routes[].segments[].hasCurbGap",
+      "routes[].segments[].hasCrosswalk",
+      "routes[].segments[].hasSignal",
+      "routes[].segments[].hasAudioSignal",
+      "routes[].segments[].hasBrailleBlock",
+      "routes[].segments[].riskLevel"
+    ],
+    "notes": [
+      "GraphHopper route output does not directly expose service road_segments IDs in the current PoC setup.",
+      "Instruction-based segments can be created, but segment-level safety attributes require road_segments join or additional public data.",
+      "INSIDE_BUILDING cannot be derived reliably in Step 9 without building polygon or entrance data.",
+      "Service decision for this case is REJECT and must be handled separately from route engine success."
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "scenarioName": "west_to_east_core",
+  "caseName": "out_of_bounds_far",
+  "requestContext": {
+    "start": {
+      "rawLocation": {
+        "lat": 35.05,
+        "lng": 128.9
+      },
+      "snappedRouteAnchor": null,
+      "locationContext": "OUT_OF_SERVICE_AREA",
+      "snapDistanceMeter": null
+    },
+    "end": {
+      "rawLocation": {
+        "lat": 35.1562079,
+        "lng": 129.0713287
+      },
+      "snappedRouteAnchor": {
+        "lat": 35.1562079,
+        "lng": 129.0713287
+      },
+      "locationContext": "ON_WALKABLE_NETWORK",
+      "snapDistanceMeter": 0.0
+    },
+    "serviceDecision": "REJECT",
+    "decisionReason": "Point is out of bounds or cannot be matched to walkable network",
+    "insideBuildingSupport": {
+      "supportedInStep9": false,
+      "reason": "Building polygon or entrance data is required to distinguish indoor locations from nearby walkable space."
+    }
+  },
+  "responseDraft": {
+    "success": false,
+    "data": null,
+    "message": "Cannot find point 0: 35.05,128.9"
+  },
+  "mappingNotes": {
+    "mappingStatus": "ERROR",
+    "validatedRouteOption": "SHORTEST",
+    "fieldSource": {
+      "routes[].distanceMeter": "GraphHopper paths[].distance",
+      "routes[].estimatedTimeMinute": "GraphHopper paths[].time with ceil-minute conversion",
+      "routes[].segments[].geometry": "GraphHopper instruction interval sliced from paths[].points",
+      "routes[].segments[].distanceMeter": "GraphHopper instructions[].distance",
+      "routes[].segments[].guidanceMessage": "GraphHopper instructions[].text",
+      "requestContext.rawLocation": "Client input coordinates",
+      "requestContext.snappedRouteAnchor": "GraphHopper nearest/route snapped result",
+      "requestContext.locationContext": "Step 8 snap-distance based interpretation rule"
+    },
+    "requiresPostProcessing": [
+      "routes[].riskLevel",
+      "routes[].segments[].hasStairs",
+      "routes[].segments[].hasCurbGap",
+      "routes[].segments[].hasCrosswalk",
+      "routes[].segments[].hasSignal",
+      "routes[].segments[].hasAudioSignal",
+      "routes[].segments[].hasBrailleBlock",
+      "routes[].segments[].riskLevel"
+    ],
+    "notes": [
+      "GraphHopper route output does not directly expose service road_segments IDs in the current PoC setup.",
+      "Instruction-based segments can be created, but segment-level safety attributes require road_segments join or additional public data.",
+      "INSIDE_BUILDING cannot be derived reliably in Step 9 without building polygon or entrance data.",
+      "Service decision for this case is REJECT and must be handled separately from route engine success."
+    ]
+  }
+}
