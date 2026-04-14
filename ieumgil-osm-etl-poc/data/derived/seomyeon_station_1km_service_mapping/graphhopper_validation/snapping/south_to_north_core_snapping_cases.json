@@ -1,0 +1,293 @@
+[
+  {
+    "scenario_name": "south_to_north_core",
+    "case_name": "exact_reference",
+    "case_type": "baseline",
+    "start_input": [
+      35.1487258,
+      129.0636539
+    ],
+    "end_input": [
+      35.1664222,
+      129.0639263
+    ],
+    "start_offset_meter": [
+      0.0,
+      0.0
+    ],
+    "end_offset_meter": [
+      0.0,
+      0.0
+    ],
+    "start_snap_distance_meter": 0.0,
+    "end_snap_distance_meter": 0.0,
+    "max_snap_distance_meter": 0.0,
+    "route_success": true,
+    "distance_meter": 2640.571,
+    "estimated_time_minute": 31.69,
+    "instruction_count": 16,
+    "service_decision": "ACCEPT",
+    "decision_reason": "Within normal GPS error range",
+    "start_nearest_point": [
+      129.0636539,
+      35.1487258
+    ],
+    "end_nearest_point": [
+      129.0639263,
+      35.1664222
+    ],
+    "start_nearest_error": null,
+    "end_nearest_error": null,
+    "route_error": null,
+    "route_snapped_waypoints": [
+      [
+        129.063654,
+        35.148726
+      ],
+      [
+        129.063926,
+        35.166422
+      ]
+    ]
+  },
+  {
+    "scenario_name": "south_to_north_core",
+    "case_name": "gps_small_error",
+    "case_type": "gps_error",
+    "start_input": [
+      35.1486539,
+      129.0637857
+    ],
+    "end_input": [
+      35.1665569,
+      129.0638164
+    ],
+    "start_offset_meter": [
+      12.0,
+      -8.0
+    ],
+    "end_offset_meter": [
+      -10.0,
+      15.0
+    ],
+    "start_snap_distance_meter": 10.389893268604707,
+    "end_snap_distance_meter": 7.3376006137257415,
+    "max_snap_distance_meter": 10.389893268604707,
+    "route_success": true,
+    "distance_meter": 2638.059,
+    "estimated_time_minute": 31.66,
+    "instruction_count": 17,
+    "service_decision": "ACCEPT",
+    "decision_reason": "Within normal GPS error range",
+    "start_nearest_point": [
+      129.06382811449646,
+      35.14856715912267
+    ],
+    "end_nearest_point": [
+      129.06380986438273,
+      35.16662271783108
+    ],
+    "start_nearest_error": null,
+    "end_nearest_error": null,
+    "route_error": null,
+    "route_snapped_waypoints": [
+      [
+        129.063828,
+        35.148567
+      ],
+      [
+        129.06381,
+        35.166623
+      ]
+    ]
+  },
+  {
+    "scenario_name": "south_to_north_core",
+    "case_name": "building_plaza_like",
+    "case_type": "off_road_but_near",
+    "start_input": [
+      35.1491031,
+      129.0640714
+    ],
+    "end_input": [
+      35.1660988,
+      129.0635747
+    ],
+    "start_offset_meter": [
+      38.0,
+      42.0
+    ],
+    "end_offset_meter": [
+      -32.0,
+      -36.0
+    ],
+    "start_snap_distance_meter": 1.048282497518072,
+    "end_snap_distance_meter": 14.597200556165504,
+    "max_snap_distance_meter": 14.597200556165504,
+    "route_success": true,
+    "distance_meter": 2528.087,
+    "estimated_time_minute": 30.34,
+    "instruction_count": 15,
+    "service_decision": "ACCEPT",
+    "decision_reason": "Within normal GPS error range",
+    "start_nearest_point": [
+      129.06406668320864,
+      35.14911169984686
+    ],
+    "end_nearest_point": [
+      129.063499,
+      35.1662146
+    ],
+    "start_nearest_error": null,
+    "end_nearest_error": null,
+    "route_error": null,
+    "route_snapped_waypoints": [
+      [
+        129.064067,
+        35.149112
+      ],
+      [
+        129.063499,
+        35.166215
+      ]
+    ]
+  },
+  {
+    "scenario_name": "south_to_north_core",
+    "case_name": "too_far_candidate",
+    "case_type": "far_off_road",
+    "start_input": [
+      35.1503428,
+      129.0660709
+    ],
+    "end_input": [
+      35.1678595,
+      129.0616187
+    ],
+    "start_offset_meter": [
+      220.0,
+      180.0
+    ],
+    "end_offset_meter": [
+      -210.0,
+      160.0
+    ],
+    "start_snap_distance_meter": 3.844569672241921,
+    "end_snap_distance_meter": 0.9581603230738825,
+    "max_snap_distance_meter": 3.844569672241921,
+    "route_success": true,
+    "distance_meter": 2510.739,
+    "estimated_time_minute": 30.13,
+    "instruction_count": 18,
+    "service_decision": "ACCEPT",
+    "decision_reason": "Within normal GPS error range",
+    "start_nearest_point": [
+      129.06606954028604,
+      35.150308202927185
+    ],
+    "end_nearest_point": [
+      129.0616189198087,
+      35.1678508835055
+    ],
+    "start_nearest_error": null,
+    "end_nearest_error": null,
+    "route_error": null,
+    "route_snapped_waypoints": [
+      [
+        129.06607,
+        35.150308
+      ],
+      [
+        129.061619,
+        35.167851
+      ]
+    ]
+  },
+  {
+    "scenario_name": "south_to_north_core",
+    "case_name": "in_bounds_large_snap",
+    "case_type": "large_snap_but_still_in_bounds",
+    "start_input": [
+      35.1568106,
+      129.0768375
+    ],
+    "end_input": [
+      35.1664222,
+      129.0639263
+    ],
+    "start_offset_meter": [
+      1200.0,
+      900.0
+    ],
+    "end_offset_meter": [
+      0.0,
+      0.0
+    ],
+    "start_snap_distance_meter": 91.2069272611411,
+    "end_snap_distance_meter": 0.0,
+    "max_snap_distance_meter": 91.2069272611411,
+    "route_success": true,
+    "distance_meter": 2551.221,
+    "estimated_time_minute": 30.9,
+    "instruction_count": 13,
+    "service_decision": "REJECT",
+    "decision_reason": "Snap distance is too large for reliable user intent",
+    "start_nearest_point": [
+      129.07776073007025,
+      35.157131688724945
+    ],
+    "end_nearest_point": [
+      129.0639263,
+      35.1664222
+    ],
+    "start_nearest_error": null,
+    "end_nearest_error": null,
+    "route_error": null,
+    "route_snapped_waypoints": [
+      [
+        129.077761,
+        35.157132
+      ],
+      [
+        129.063926,
+        35.166422
+      ]
+    ]
+  },
+  {
+    "scenario_name": "south_to_north_core",
+    "case_name": "out_of_bounds_far",
+    "case_type": "hard_fail",
+    "start_input": [
+      35.05,
+      128.9
+    ],
+    "end_input": [
+      35.1664222,
+      129.0639263
+    ],
+    "start_offset_meter": null,
+    "end_offset_meter": [
+      0.0,
+      0.0
+    ],
+    "start_snap_distance_meter": null,
+    "end_snap_distance_meter": 0.0,
+    "max_snap_distance_meter": null,
+    "route_success": false,
+    "distance_meter": null,
+    "estimated_time_minute": null,
+    "instruction_count": null,
+    "service_decision": "REJECT",
+    "decision_reason": "Point is out of bounds or cannot be matched to walkable network",
+    "start_nearest_point": null,
+    "end_nearest_point": [
+      129.0639263,
+      35.1664222
+    ],
+    "start_nearest_error": "Point 35.05,128.9 is either out of bounds or cannot be found",
+    "end_nearest_error": null,
+    "route_error": "Cannot find point 0: 35.05,128.9",
+    "route_snapped_waypoints": []
+  }
+]
