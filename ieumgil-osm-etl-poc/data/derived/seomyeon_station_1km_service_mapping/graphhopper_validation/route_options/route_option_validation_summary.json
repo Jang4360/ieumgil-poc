@@ -1,0 +1,67 @@
+{
+  "componentId": 1,
+  "inputFiles": {
+    "roadNodesCsv": "ieumgil-osm-etl-poc/data/derived/seomyeon_station_1km_service_mapping/road_nodes_service.csv",
+    "cleanedSegmentsCsv": "ieumgil-osm-etl-poc/data/derived/seomyeon_station_1km_service_mapping/graphhopper_validation/road_segments_service_cleaned.csv"
+  },
+  "networkStats": {
+    "nodeCount": 1516,
+    "edgeCount": 2076,
+    "stairsEdgeCount": 6,
+    "crosswalkEdgeCount": 68,
+    "signalizedCrosswalkEdgeCount": 5,
+    "unsignalizedCrosswalkEdgeCount": 63
+  },
+  "searchConfig": {
+    "avoidStairsPair": [
+      1244,
+      1335
+    ],
+    "avoidUnsignalizedCrossingPair": [
+      322,
+      1218
+    ],
+    "unsignalizedCrosswalkPenaltyMeter": 80.0
+  },
+  "validatedRouteOptions": {
+    "SHORTEST": {
+      "description": "Default walking shortest path based on length_meter.",
+      "validatedInPreviousStep": "Step 7 and Step 9 outputs"
+    },
+    "SAFE": {
+      "description": "Alternative route option with explicit avoidance or penalty rules.",
+      "representativeRules": [
+        {
+          "name": "avoid_stairs",
+          "implementationCandidate": "GraphHopper profile/custom model candidate",
+          "outputFile": "avoid_stairs_candidate.json"
+        },
+        {
+          "name": "avoid_unsignalized_crossing",
+          "implementationCandidate": "GraphHopper import extension or service-side routing graph candidate",
+          "outputFile": "avoid_unsignalized_crossing_candidate.json"
+        }
+      ],
+      "postProcessingOnly": [
+        "riskLevel",
+        "has_curb_gap",
+        "has_audio_signal",
+        "has_braille_block"
+      ]
+    }
+  },
+  "representativeComparisons": [
+    {
+      "strategy": "avoid_stairs",
+      "distanceDetourMeter": 9.94,
+      "stairsRemoved": 1,
+      "outputFile": "avoid_stairs_candidate.json"
+    },
+    {
+      "strategy": "avoid_unsignalized_crossing",
+      "distanceDetourMeter": 144.73,
+      "unsignalizedCrosswalkReduction": 10,
+      "outputFile": "avoid_unsignalized_crossing_candidate.json"
+    }
+  ]
+}

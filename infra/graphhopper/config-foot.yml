@@ -3,13 +3,19 @@ graphhopper:
   graph.location: graph-cache
 
   profiles:
-    - name: foot
-      custom_model_files: [foot.json]
+    - name: visual_shortest
+      custom_model_files: [ieumgil-foot-base.json, visual-shortest.json]
+    - name: visual_safe
+      custom_model_files: [ieumgil-foot-base.json, visual-safe.json]
+    - name: wheelchair_shortest
+      custom_model_files: [ieumgil-foot-base.json, wheelchair-shortest.json]
+    - name: wheelchair_safe
+      custom_model_files: [ieumgil-foot-base.json, wheelchair-safe.json]
 
   profiles_ch: []
   profiles_lm: []
 
-  graph.encoded_values: foot_access, foot_priority, foot_average_speed, foot_road_access, hike_rating, mtb_rating, country, road_class
+  graph.encoded_values: foot_access, foot_priority, foot_average_speed, foot_road_access, hike_rating, mtb_rating, country, road_class, crossing, footway, surface, average_slope, osm_way_id, has_curb_gap, has_elevator, has_audio_signal, has_braille_block, width_meter
 
   prepare.min_network_size: 2
   prepare.subnetworks.threads: 1

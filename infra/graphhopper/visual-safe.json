@@ -1,0 +1,16 @@
+{
+  "distance_influence": 45,
+  "priority": [
+    { "if": "road_class == STEPS", "multiply_by": 0.25 },
+    { "if": "crossing == TRAFFIC_SIGNALS", "multiply_by": 1.15 },
+    { "if": "crossing == UNCONTROLLED", "multiply_by": 0.6 },
+    { "if": "crossing == UNMARKED", "multiply_by": 0.4 },
+    { "if": "has_audio_signal", "multiply_by": 1.2 },
+    { "if": "has_braille_block", "multiply_by": 1.1 },
+    { "if": "footway == SIDEWALK", "multiply_by": 1.1 },
+    { "if": "footway == TRAFFIC_ISLAND", "multiply_by": 1.05 }
+  ],
+  "speed": [
+    { "if": "road_class == STEPS", "multiply_by": 0.7 }
+  ]
+}
