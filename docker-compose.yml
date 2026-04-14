@@ -1,0 +1,63 @@
+services:
+  backend:
+    build:
+      context: ./ieumgil-routing-poc
+    container_name: ieumgil-backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+      graphhopper:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${POSTGRES_DB:-ieumgil}
+      DB_USERNAME: ${POSTGRES_USER:-ieumgil}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-ieumgil}
+      GRAPHHOPPER_BASE_URL: http://graphhopper:8989
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: ieumgil-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ieumgil}
+      POSTGRES_USER: ${POSTGRES_USER:-ieumgil}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ieumgil}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-ieumgil} -d ${POSTGRES_DB:-ieumgil}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d:ro
+
+  graphhopper:
+    build:
+      context: ./infra/graphhopper
+      args:
+        GRAPHHOPPER_VERSION: "11.0"
+    container_name: ieumgil-graphhopper
+    environment:
+      GRAPHHOPPER_MODE: standby
+      GRAPHHOPPER_DATA_FILE: /data/raw/busan.osm.pbf
+      GRAPHHOPPER_GRAPH_LOCATION: /graphhopper/data
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /data/raw/busan.osm.pbf"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    ports:
+      - "${GRAPHHOPPER_PORT:-8989}:8989"
+    volumes:
+      - ./ieumgil-osm-etl-poc/data/raw:/data/raw:ro
+      - graphhopper-data:/graphhopper/data
+
+volumes:
+  postgres-data:
+  graphhopper-data:

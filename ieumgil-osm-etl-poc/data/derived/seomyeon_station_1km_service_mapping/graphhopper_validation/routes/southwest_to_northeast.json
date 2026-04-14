@@ -1,0 +1,665 @@
+{
+  "hints": {
+    "visited_nodes.sum": 1436,
+    "visited_nodes.average": 1436.0
+  },
+  "info": {
+    "copyrights": [
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "took": 5,
+    "road_data_timestamp": "2026-04-13T23:00:00Z"
+  },
+  "paths": [
+    {
+      "distance": 3555.351,
+      "weight": 2310.3282,
+      "time": 2559851,
+      "transfers": 0,
+      "legs": [],
+      "points_encoded": false,
+      "bbox": [
+        129.051413,
+        35.151409,
+        129.073408,
+        35.166023
+      ],
+      "points": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            129.051641,
+            35.151857
+          ],
+          [
+            129.051413,
+            35.152087
+          ],
+          [
+            129.052415,
+            35.152773
+          ],
+          [
+            129.053846,
+            35.151409
+          ],
+          [
+            129.053988,
+            35.151491
+          ],
+          [
+            129.054448,
+            35.151727
+          ],
+          [
+            129.054537,
+            35.151763
+          ],
+          [
+            129.054554,
+            35.151811
+          ],
+          [
+            129.054633,
+            35.151877
+          ],
+          [
+            129.054735,
+            35.151944
+          ],
+          [
+            129.055064,
+            35.151642
+          ],
+          [
+            129.054974,
+            35.152023
+          ],
+          [
+            129.054916,
+            35.152602
+          ],
+          [
+            129.054769,
+            35.152729
+          ],
+          [
+            129.054411,
+            35.154055
+          ],
+          [
+            129.054963,
+            35.154251
+          ],
+          [
+            129.055425,
+            35.15445
+          ],
+          [
+            129.05697,
+            35.154472
+          ],
+          [
+            129.057032,
+            35.154616
+          ],
+          [
+            129.057164,
+            35.154977
+          ],
+          [
+            129.057219,
+            35.155164
+          ],
+          [
+            129.057241,
+            35.155403
+          ],
+          [
+            129.057202,
+            35.156572
+          ],
+          [
+            129.057242,
+            35.156577
+          ],
+          [
+            129.057237,
+            35.156827
+          ],
+          [
+            129.057704,
+            35.156833
+          ],
+          [
+            129.057681,
+            35.157437
+          ],
+          [
+            129.057764,
+            35.157435
+          ],
+          [
+            129.057763,
+            35.157553
+          ],
+          [
+            129.058518,
+            35.157573
+          ],
+          [
+            129.058911,
+            35.157591
+          ],
+          [
+            129.059282,
+            35.157645
+          ],
+          [
+            129.059293,
+            35.15774
+          ],
+          [
+            129.059882,
+            35.157762
+          ],
+          [
+            129.060667,
+            35.157771
+          ],
+          [
+            129.060662,
+            35.158502
+          ],
+          [
+            129.0623,
+            35.160515
+          ],
+          [
+            129.062943,
+            35.160757
+          ],
+          [
+            129.063565,
+            35.161769
+          ],
+          [
+            129.063401,
+            35.16214
+          ],
+          [
+            129.063768,
+            35.162569
+          ],
+          [
+            129.064613,
+            35.163525
+          ],
+          [
+            129.064844,
+            35.163413
+          ],
+          [
+            129.065163,
+            35.163288
+          ],
+          [
+            129.0653,
+            35.163252
+          ],
+          [
+            129.065424,
+            35.163262
+          ],
+          [
+            129.067624,
+            35.163271
+          ],
+          [
+            129.06763,
+            35.16356
+          ],
+          [
+            129.067618,
+            35.16385
+          ],
+          [
+            129.06859,
+            35.164337
+          ],
+          [
+            129.068854,
+            35.164577
+          ],
+          [
+            129.069331,
+            35.164736
+          ],
+          [
+            129.069725,
+            35.165853
+          ],
+          [
+            129.070427,
+            35.165653
+          ],
+          [
+            129.070526,
+            35.165605
+          ],
+          [
+            129.070642,
+            35.165515
+          ],
+          [
+            129.070769,
+            35.165447
+          ],
+          [
+            129.071886,
+            35.16523
+          ],
+          [
+            129.072839,
+            35.165019
+          ],
+          [
+            129.073079,
+            35.165449
+          ],
+          [
+            129.073157,
+            35.16547
+          ],
+          [
+            129.073319,
+            35.165965
+          ],
+          [
+            129.073362,
+            35.166003
+          ],
+          [
+            129.073408,
+            35.166023
+          ]
+        ]
+      },
+      "instructions": [
+        {
+          "distance": 32.946,
+          "heading": 321.01,
+          "sign": 0,
+          "interval": [
+            0,
+            1
+          ],
+          "text": "Continue",
+          "time": 23721,
+          "street_name": ""
+        },
+        {
+          "distance": 118.848,
+          "sign": 2,
+          "interval": [
+            1,
+            2
+          ],
+          "text": "Turn right",
+          "time": 85571,
+          "street_name": ""
+        },
+        {
+          "distance": 199.867,
+          "sign": 2,
+          "interval": [
+            2,
+            3
+          ],
+          "text": "Turn right",
+          "time": 143904,
+          "street_name": ""
+        },
+        {
+          "distance": 74.263,
+          "sign": -2,
+          "interval": [
+            3,
+            6
+          ],
+          "text": "Turn left",
+          "time": 53469,
+          "street_name": ""
+        },
+        {
+          "distance": 5.563,
+          "sign": -2,
+          "interval": [
+            6,
+            7
+          ],
+          "text": "Turn left",
+          "time": 4005,
+          "street_name": ""
+        },
+        {
+          "distance": 22.19,
+          "sign": 7,
+          "interval": [
+            7,
+            9
+          ],
+          "text": "Keep right",
+          "time": 15977,
+          "street_name": ""
+        },
+        {
+          "distance": 45.002,
+          "sign": 2,
+          "interval": [
+            9,
+            10
+          ],
+          "text": "Turn right onto 신천대로",
+          "time": 32401,
+          "street_name": "신천대로"
+        },
+        {
+          "distance": 43.191,
+          "sign": -3,
+          "interval": [
+            10,
+            11
+          ],
+          "text": "Turn sharp left onto 범천로",
+          "time": 31098,
+          "street_name": "범천로"
+        },
+        {
+          "distance": 64.563,
+          "sign": 7,
+          "interval": [
+            11,
+            12
+          ],
+          "text": "Keep right onto 신천대로102번길",
+          "time": 46486,
+          "street_name": "신천대로102번길"
+        },
+        {
+          "distance": 170.411,
+          "sign": -7,
+          "interval": [
+            12,
+            14
+          ],
+          "text": "Keep left onto 신천대로162번길",
+          "time": 122696,
+          "street_name": "신천대로162번길"
+        },
+        {
+          "distance": 242.689,
+          "sign": 2,
+          "interval": [
+            14,
+            17
+          ],
+          "text": "Turn right",
+          "time": 174737,
+          "street_name": ""
+        },
+        {
+          "distance": 237.002,
+          "sign": -2,
+          "interval": [
+            17,
+            22
+          ],
+          "text": "Turn left onto 가야대로784번길",
+          "time": 170641,
+          "street_name": "가야대로784번길"
+        },
+        {
+          "distance": 31.556,
+          "sign": 2,
+          "interval": [
+            22,
+            24
+          ],
+          "text": "Turn right",
+          "time": 22720,
+          "street_name": ""
+        },
+        {
+          "distance": 42.397,
+          "sign": 2,
+          "interval": [
+            24,
+            25
+          ],
+          "text": "Turn right",
+          "time": 30526,
+          "street_name": ""
+        },
+        {
+          "distance": 74.685,
+          "sign": -2,
+          "interval": [
+            25,
+            27
+          ],
+          "text": "Turn left",
+          "time": 53773,
+          "street_name": ""
+        },
+        {
+          "distance": 13.077,
+          "sign": -2,
+          "interval": [
+            27,
+            28
+          ],
+          "text": "Turn left onto 서면로",
+          "time": 9415,
+          "street_name": "서면로"
+        },
+        {
+          "street_ref": "30",
+          "distance": 138.756,
+          "sign": 2,
+          "interval": [
+            28,
+            31
+          ],
+          "text": "Turn right onto 가야대로",
+          "time": 99904,
+          "street_name": "가야대로"
+        },
+        {
+          "street_ref": "7",
+          "distance": 10.631,
+          "sign": -2,
+          "interval": [
+            31,
+            32
+          ],
+          "text": "Turn left onto 중앙대로",
+          "time": 7654,
+          "street_name": "중앙대로"
+        },
+        {
+          "distance": 124.982,
+          "sign": 2,
+          "interval": [
+            32,
+            34
+          ],
+          "text": "Turn right onto 서전로",
+          "time": 89987,
+          "street_name": "서전로"
+        },
+        {
+          "distance": 350.147,
+          "sign": -2,
+          "interval": [
+            34,
+            36
+          ],
+          "text": "Turn left onto 서전로9번길",
+          "time": 252106,
+          "street_name": "서전로9번길"
+        },
+        {
+          "distance": 64.346,
+          "sign": 7,
+          "interval": [
+            36,
+            37
+          ],
+          "text": "Keep right onto 동천로132번길",
+          "time": 46329,
+          "street_name": "동천로132번길"
+        },
+        {
+          "distance": 125.923,
+          "sign": -1,
+          "interval": [
+            37,
+            38
+          ],
+          "text": "Turn slight left",
+          "time": 90665,
+          "street_name": ""
+        },
+        {
+          "distance": 43.895,
+          "sign": -2,
+          "interval": [
+            38,
+            39
+          ],
+          "text": "Turn left onto 전포대로275번길",
+          "time": 31604,
+          "street_name": "전포대로275번길"
+        },
+        {
+          "distance": 189.297,
+          "sign": 2,
+          "interval": [
+            39,
+            41
+          ],
+          "text": "Turn right onto 전포대로275번길",
+          "time": 136294,
+          "street_name": "전포대로275번길"
+        },
+        {
+          "distance": 80.991,
+          "sign": 2,
+          "interval": [
+            41,
+            45
+          ],
+          "text": "Turn right onto 전포대로",
+          "time": 58313,
+          "street_name": "전포대로"
+        },
+        {
+          "distance": 199.987,
+          "sign": 0,
+          "interval": [
+            45,
+            46
+          ],
+          "text": "Continue onto 전포대로298번길",
+          "time": 143990,
+          "street_name": "전포대로298번길"
+        },
+        {
+          "distance": 64.395,
+          "sign": -2,
+          "interval": [
+            46,
+            48
+          ],
+          "text": "Turn left onto 동성로112번길",
+          "time": 46365,
+          "street_name": "동성로112번길"
+        },
+        {
+          "distance": 186.376,
+          "sign": 2,
+          "interval": [
+            48,
+            51
+          ],
+          "text": "Turn right onto 진남로453번길",
+          "time": 134191,
+          "street_name": "진남로453번길"
+        },
+        {
+          "distance": 129.302,
+          "sign": -2,
+          "interval": [
+            51,
+            52
+          ],
+          "text": "Turn left onto 진남로",
+          "time": 93097,
+          "street_name": "진남로"
+        },
+        {
+          "distance": 360.605,
+          "sign": 2,
+          "interval": [
+            52,
+            60
+          ],
+          "text": "Turn right",
+          "time": 259635,
+          "street_name": ""
+        },
+        {
+          "distance": 67.468,
+          "sign": -2,
+          "interval": [
+            60,
+            63
+          ],
+          "text": "Turn left",
+          "time": 48577,
+          "street_name": ""
+        },
+        {
+          "distance": 0.0,
+          "sign": 4,
+          "last_heading": 61.92527849773937,
+          "interval": [
+            63,
+            63
+          ],
+          "text": "Arrive at destination",
+          "time": 0,
+          "street_name": ""
+        }
+      ],
+      "details": {},
+      "ascend": 0.0,
+      "descend": 0.0,
+      "snapped_waypoints": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            129.051641,
+            35.151857
+          ],
+          [
+            129.073408,
+            35.166023
+          ]
+        ]
+      }
+    }
+  ]
+}

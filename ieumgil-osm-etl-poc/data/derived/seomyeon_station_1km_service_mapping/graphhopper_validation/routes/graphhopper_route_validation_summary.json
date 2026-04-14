@@ -1,0 +1,65 @@
+{
+  "base_url": "http://localhost:8989",
+  "scenario_results": [
+    {
+      "name": "west_to_east_core",
+      "start_node_id": 23,
+      "end_node_id": 1529,
+      "start_point": [
+        35.15776,
+        129.04827
+      ],
+      "end_point": [
+        35.1562079,
+        129.0713287
+      ],
+      "success": true,
+      "distance_meter": 2915.209,
+      "time_millis": 2098952,
+      "estimated_time_minute": 34.98,
+      "point_count": 89,
+      "instruction_count": 34,
+      "snapped_waypoint_count": 2
+    },
+    {
+      "name": "south_to_north_core",
+      "start_node_id": 174,
+      "end_node_id": 1248,
+      "start_point": [
+        35.1487258,
+        129.0636539
+      ],
+      "end_point": [
+        35.1664222,
+        129.0639263
+      ],
+      "success": true,
+      "distance_meter": 2640.571,
+      "time_millis": 1901211,
+      "estimated_time_minute": 31.69,
+      "point_count": 37,
+      "instruction_count": 16,
+      "snapped_waypoint_count": 2
+    },
+    {
+      "name": "southwest_to_northeast",
+      "start_node_id": 304,
+      "end_node_id": 736,
+      "start_point": [
+        35.1518567,
+        129.0516408
+      ],
+      "end_point": [
+        35.1660227,
+        129.0734084
+      ],
+      "success": true,
+      "distance_meter": 3555.351,
+      "time_millis": 2559851,
+      "estimated_time_minute": 42.66,
+      "point_count": 64,
+      "instruction_count": 32,
+      "snapped_waypoint_count": 2
+    }
+  ]
+}

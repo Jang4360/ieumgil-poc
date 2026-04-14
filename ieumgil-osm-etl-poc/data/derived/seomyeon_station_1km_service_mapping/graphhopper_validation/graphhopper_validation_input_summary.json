@@ -1,0 +1,20 @@
+{
+  "input_segment_count": 2190,
+  "cleaned_segment_count": 2188,
+  "component_count_before_cleaning": 17,
+  "component_count_after_cleaning": 17,
+  "boundary_clipped_candidate_count": 5,
+  "duplicate_type_counts": {
+    "exact_duplicate": 1,
+    "none": 2188,
+    "reverse_duplicate": 1
+  },
+  "removed_exact_duplicates": 1,
+  "normalized_reverse_duplicates": 1,
+  "bbox": {
+    "min_lon": 129.0341204,
+    "min_lat": 35.1419032,
+    "max_lon": 129.0897171,
+    "max_lat": 35.1730592
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "hints": {
+    "visited_nodes.sum": 1560,
+    "visited_nodes.average": 1560.0
+  },
+  "info": {
+    "copyrights": [
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "took": 3,
+    "road_data_timestamp": "2026-04-13T23:00:00Z"
+  },
+  "paths": [
+    {
+      "distance": 2640.571,
+      "weight": 1891.19202,
+      "time": 1901211,
+      "transfers": 0,
+      "legs": [],
+      "points_encoded": false,
+      "bbox": [
+        129.061132,
+        35.148726,
+        129.066181,
+        35.166422
+      ],
+      "points": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            129.063654,
+            35.148726
+          ],
+          [
+            129.06481,
+            35.149112
+          ],
+          [
+            129.065365,
+            35.149286
+          ],
+          [
+            129.065779,
+            35.149399
+          ],
+          [
+            129.065686,
+            35.149658
+          ],
+          [
+            129.065645,
+            35.149771
+          ],
+          [
+            129.065595,
+            35.149821
+          ],
+          [
+            129.065527,
+            35.149949
+          ],
+          [
+            129.065512,
+            35.150958
+          ],
+          [
+            129.066181,
+            35.150953
+          ],
+          [
+            129.066124,
+            35.157777
+          ],
+          [
+            129.066042,
+            35.157777
+          ],
+          [
+            129.066128,
+            35.158065
+          ],
+          [
+            129.066104,
+            35.159401
+          ],
+          [
+            129.066099,
+            35.160695
+          ],
+          [
+            129.066082,
+            35.161286
+          ],
+          [
+            129.066076,
+            35.162178
+          ],
+          [
+            129.065413,
+            35.162173
+          ],
+          [
+            129.065417,
+            35.163144
+          ],
+          [
+            129.065424,
+            35.163262
+          ],
+          [
+            129.065321,
+            35.163345
+          ],
+          [
+            129.065022,
+            35.163476
+          ],
+          [
+            129.064695,
+            35.163631
+          ],
+          [
+            129.063974,
+            35.163996
+          ],
+          [
+            129.063671,
+            35.164142
+          ],
+          [
+            129.062918,
+            35.164539
+          ],
+          [
+            129.062164,
+            35.164946
+          ],
+          [
+            129.061132,
+            35.165536
+          ],
+          [
+            129.061838,
+            35.165878
+          ],
+          [
+            129.061906,
+            35.165784
+          ],
+          [
+            129.06199,
+            35.16574
+          ],
+          [
+            129.062611,
+            35.165949
+          ],
+          [
+            129.062774,
+            35.16592
+          ],
+          [
+            129.062921,
+            35.165969
+          ],
+          [
+            129.063231,
+            35.166114
+          ],
+          [
+            129.063499,
+            35.166215
+          ],
+          [
+            129.063926,
+            35.166422
+          ]
+        ]
+      },
+      "instructions": [
+        {
+          "street_ref": "24",
+          "distance": 207.294,
+          "heading": 67.79,
+          "sign": 0,
+          "interval": [
+            0,
+            3
+          ],
+          "text": "Continue onto 황령대로",
+          "time": 149252,
+          "street_name": "황령대로"
+        },
+        {
+          "distance": 30.07,
+          "sign": -2,
+          "interval": [
+            3,
+            4
+          ],
+          "text": "Turn left",
+          "time": 21651,
+          "street_name": ""
+        },
+        {
+          "distance": 13.029,
+          "sign": 7,
+          "interval": [
+            4,
+            5
+          ],
+          "text": "Keep right",
+          "time": 9381,
+          "street_name": ""
+        },
+        {
+          "distance": 22.778,
+          "sign": -1,
+          "interval": [
+            5,
+            7
+          ],
+          "text": "Turn slight left",
+          "time": 16400,
+          "street_name": ""
+        },
+        {
+          "distance": 112.127,
+          "sign": 1,
+          "interval": [
+            7,
+            8
+          ],
+          "text": "Turn slight right onto 전포대로",
+          "time": 80731,
+          "street_name": "전포대로"
+        },
+        {
+          "distance": 60.808,
+          "sign": 2,
+          "interval": [
+            8,
+            9
+          ],
+          "text": "Turn right onto 전포대로162번길",
+          "time": 43782,
+          "street_name": "전포대로162번길"
+        },
+        {
+          "distance": 758.845,
+          "sign": -2,
+          "interval": [
+            9,
+            10
+          ],
+          "text": "Turn left onto 서전로58번길",
+          "time": 546368,
+          "street_name": "서전로58번길"
+        },
+        {
+          "distance": 7.527,
+          "sign": -2,
+          "interval": [
+            10,
+            11
+          ],
+          "text": "Turn left onto 서전로",
+          "time": 5419,
+          "street_name": "서전로"
+        },
+        {
+          "distance": 33.029,
+          "sign": 3,
+          "interval": [
+            11,
+            12
+          ],
+          "text": "Turn sharp right",
+          "time": 23781,
+          "street_name": ""
+        },
+        {
+          "distance": 457.296,
+          "sign": -7,
+          "interval": [
+            12,
+            16
+          ],
+          "text": "Keep left onto 서전로57번길",
+          "time": 329254,
+          "street_name": "서전로57번길"
+        },
+        {
+          "distance": 60.217,
+          "sign": -2,
+          "interval": [
+            16,
+            17
+          ],
+          "text": "Turn left",
+          "time": 43356,
+          "street_name": ""
+        },
+        {
+          "distance": 121.091,
+          "sign": 2,
+          "interval": [
+            17,
+            19
+          ],
+          "text": "Turn right onto 전포대로",
+          "time": 87185,
+          "street_name": "전포대로"
+        },
+        {
+          "distance": 465.468,
+          "sign": -2,
+          "interval": [
+            19,
+            27
+          ],
+          "text": "Turn left onto 전포대로",
+          "time": 335136,
+          "street_name": "전포대로"
+        },
+        {
+          "distance": 74.626,
+          "sign": 3,
+          "interval": [
+            27,
+            28
+          ],
+          "text": "Turn sharp right onto 범전로32번길",
+          "time": 53731,
+          "street_name": "범전로32번길"
+        },
+        {
+          "distance": 216.366,
+          "sign": 2,
+          "interval": [
+            28,
+            36
+          ],
+          "text": "Turn right",
+          "time": 155784,
+          "street_name": ""
+        },
+        {
+          "distance": 0.0,
+          "sign": 4,
+          "last_heading": 59.27821348423497,
+          "interval": [
+            36,
+            36
+          ],
+          "text": "Arrive at destination",
+          "time": 0,
+          "street_name": ""
+        }
+      ],
+      "details": {},
+      "ascend": 0.0,
+      "descend": 0.0,
+      "snapped_waypoints": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            129.063654,
+            35.148726
+          ],
+          [
+            129.063926,
+            35.166422
+          ]
+        ]
+      }
+    }
+  ]
+}
