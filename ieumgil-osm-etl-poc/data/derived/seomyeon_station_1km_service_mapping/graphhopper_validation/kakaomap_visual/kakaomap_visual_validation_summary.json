@@ -1,0 +1,260 @@
+{
+  "baseUrl": "http://localhost:8989",
+  "corsProbe": {
+    "origin": "http://localhost:8080",
+    "corsEnabled": true,
+    "accessControlAllowOrigin": "*",
+    "infoResponseHeaderCount": 8
+  },
+  "profiles": [
+    "visual_shortest",
+    "visual_safe",
+    "wheelchair_shortest",
+    "wheelchair_safe"
+  ],
+  "scenarios": [
+    {
+      "name": "visual_crossing_compare",
+      "family": "visual",
+      "start": {
+        "lat": 35.1497707,
+        "lng": 129.0656452
+      },
+      "end": {
+        "lat": 35.1578066,
+        "lng": 129.0510036
+      },
+      "results": [
+        {
+          "profile": "visual_shortest",
+          "success": true,
+          "distanceMeter": 1914.875,
+          "estimatedTimeMinute": 22.98,
+          "pointCount": 49,
+          "instructionCount": 16,
+          "snappedWaypointCount": 2,
+          "detailKeys": [
+            "crossing",
+            "has_audio_signal",
+            "has_braille_block",
+            "has_curb_gap",
+            "has_elevator",
+            "surface",
+            "width_meter"
+          ],
+          "detailRangeCounts": {
+            "has_elevator": 1,
+            "has_curb_gap": 1,
+            "has_audio_signal": 1,
+            "surface": 5,
+            "width_meter": 1,
+            "crossing": 10,
+            "has_braille_block": 1
+          }
+        },
+        {
+          "profile": "visual_safe",
+          "success": true,
+          "distanceMeter": 2044.669,
+          "estimatedTimeMinute": 24.54,
+          "pointCount": 68,
+          "instructionCount": 22,
+          "snappedWaypointCount": 2,
+          "detailKeys": [
+            "crossing",
+            "has_audio_signal",
+            "has_braille_block",
+            "has_curb_gap",
+            "has_elevator",
+            "surface",
+            "width_meter"
+          ],
+          "detailRangeCounts": {
+            "has_elevator": 1,
+            "has_curb_gap": 1,
+            "has_audio_signal": 1,
+            "surface": 7,
+            "width_meter": 1,
+            "crossing": 17,
+            "has_braille_block": 1
+          }
+        }
+      ],
+      "comparison": {
+        "distanceDeltaMeter": 129.794,
+        "timeDeltaMinute": 1.56,
+        "detailKeysShared": [
+          "crossing",
+          "has_audio_signal",
+          "has_braille_block",
+          "has_curb_gap",
+          "has_elevator",
+          "surface",
+          "width_meter"
+        ]
+      }
+    },
+    {
+      "name": "wheelchair_stairs_compare",
+      "family": "wheelchair",
+      "start": {
+        "lat": 35.1517986,
+        "lng": 129.0665998
+      },
+      "end": {
+        "lat": 35.1618369,
+        "lng": 129.0700577
+      },
+      "results": [
+        {
+          "profile": "wheelchair_shortest",
+          "success": true,
+          "distanceMeter": 1508.865,
+          "estimatedTimeMinute": 18.11,
+          "pointCount": 27,
+          "instructionCount": 9,
+          "snappedWaypointCount": 2,
+          "detailKeys": [
+            "crossing",
+            "has_audio_signal",
+            "has_braille_block",
+            "has_curb_gap",
+            "has_elevator",
+            "surface",
+            "width_meter"
+          ],
+          "detailRangeCounts": {
+            "has_elevator": 1,
+            "has_curb_gap": 1,
+            "has_audio_signal": 1,
+            "surface": 3,
+            "width_meter": 1,
+            "crossing": 5,
+            "has_braille_block": 1
+          }
+        },
+        {
+          "profile": "wheelchair_safe",
+          "success": true,
+          "distanceMeter": 1508.865,
+          "estimatedTimeMinute": 18.11,
+          "pointCount": 27,
+          "instructionCount": 9,
+          "snappedWaypointCount": 2,
+          "detailKeys": [
+            "crossing",
+            "has_audio_signal",
+            "has_braille_block",
+            "has_curb_gap",
+            "has_elevator",
+            "surface",
+            "width_meter"
+          ],
+          "detailRangeCounts": {
+            "has_elevator": 1,
+            "has_curb_gap": 1,
+            "has_audio_signal": 1,
+            "surface": 3,
+            "width_meter": 1,
+            "crossing": 5,
+            "has_braille_block": 1
+          }
+        }
+      ],
+      "comparison": {
+        "distanceDeltaMeter": 0.0,
+        "timeDeltaMinute": 0.0,
+        "detailKeysShared": [
+          "crossing",
+          "has_audio_signal",
+          "has_braille_block",
+          "has_curb_gap",
+          "has_elevator",
+          "surface",
+          "width_meter"
+        ]
+      }
+    },
+    {
+      "name": "snapped_offset_demo",
+      "family": "visual",
+      "start": {
+        "lat": 35.1581373,
+        "lng": 129.0486875
+      },
+      "end": {
+        "lat": 35.1558845,
+        "lng": 129.0709771
+      },
+      "results": [
+        {
+          "profile": "visual_shortest",
+          "success": true,
+          "distanceMeter": 2908.841,
+          "estimatedTimeMinute": 34.91,
+          "pointCount": 94,
+          "instructionCount": 36,
+          "snappedWaypointCount": 2,
+          "detailKeys": [
+            "crossing",
+            "has_audio_signal",
+            "has_braille_block",
+            "has_curb_gap",
+            "has_elevator",
+            "surface",
+            "width_meter"
+          ],
+          "detailRangeCounts": {
+            "has_elevator": 1,
+            "has_curb_gap": 1,
+            "has_audio_signal": 1,
+            "surface": 12,
+            "width_meter": 1,
+            "crossing": 14,
+            "has_braille_block": 1
+          }
+        },
+        {
+          "profile": "visual_safe",
+          "success": true,
+          "distanceMeter": 2908.841,
+          "estimatedTimeMinute": 34.91,
+          "pointCount": 94,
+          "instructionCount": 36,
+          "snappedWaypointCount": 2,
+          "detailKeys": [
+            "crossing",
+            "has_audio_signal",
+            "has_braille_block",
+            "has_curb_gap",
+            "has_elevator",
+            "surface",
+            "width_meter"
+          ],
+          "detailRangeCounts": {
+            "has_elevator": 1,
+            "has_curb_gap": 1,
+            "has_audio_signal": 1,
+            "surface": 12,
+            "width_meter": 1,
+            "crossing": 14,
+            "has_braille_block": 1
+          }
+        }
+      ],
+      "comparison": {
+        "distanceDeltaMeter": 0.0,
+        "timeDeltaMinute": 0.0,
+        "detailKeysShared": [
+          "crossing",
+          "has_audio_signal",
+          "has_braille_block",
+          "has_curb_gap",
+          "has_elevator",
+          "surface",
+          "width_meter"
+        ]
+      }
+    }
+  ]
+}

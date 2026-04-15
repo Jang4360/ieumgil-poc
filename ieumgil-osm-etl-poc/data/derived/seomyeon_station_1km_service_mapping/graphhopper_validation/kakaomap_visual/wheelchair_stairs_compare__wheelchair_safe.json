@@ -1,0 +1,342 @@
+{
+  "hints": {
+    "visited_nodes.sum": 212,
+    "visited_nodes.average": 212.0
+  },
+  "info": {
+    "copyrights": [
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "took": 4,
+    "road_data_timestamp": "2026-04-13T23:00:00Z"
+  },
+  "paths": [
+    {
+      "distance": 1508.865,
+      "weight": 972.989475,
+      "time": 1086384,
+      "transfers": 0,
+      "legs": [],
+      "points_encoded": false,
+      "bbox": [
+        129.0666,
+        35.151799,
+        129.070442,
+        35.161957
+      ],
+      "points": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            129.0666,
+            35.151799
+          ],
+          [
+            129.06727,
+            35.151805
+          ],
+          [
+            129.067242,
+            35.154034
+          ],
+          [
+            129.06723,
+            35.154974
+          ],
+          [
+            129.067206,
+            35.158577
+          ],
+          [
+            129.068127,
+            35.15858
+          ],
+          [
+            129.068019,
+            35.159006
+          ],
+          [
+            129.068474,
+            35.159661
+          ],
+          [
+            129.068759,
+            35.160021
+          ],
+          [
+            129.068984,
+            35.16015
+          ],
+          [
+            129.06958,
+            35.161065
+          ],
+          [
+            129.070188,
+            35.160804
+          ],
+          [
+            129.070442,
+            35.160822
+          ],
+          [
+            129.070288,
+            35.160996
+          ],
+          [
+            129.069916,
+            35.161178
+          ],
+          [
+            129.070018,
+            35.161314
+          ],
+          [
+            129.070029,
+            35.161381
+          ],
+          [
+            129.069991,
+            35.161429
+          ],
+          [
+            129.069687,
+            35.161561
+          ],
+          [
+            129.069656,
+            35.161595
+          ],
+          [
+            129.069691,
+            35.161893
+          ],
+          [
+            129.069715,
+            35.161931
+          ],
+          [
+            129.069773,
+            35.161957
+          ],
+          [
+            129.069905,
+            35.161931
+          ],
+          [
+            129.069991,
+            35.1619
+          ],
+          [
+            129.070033,
+            35.161879
+          ],
+          [
+            129.070058,
+            35.161837
+          ]
+        ]
+      },
+      "instructions": [
+        {
+          "distance": 60.9,
+          "heading": 89.35,
+          "sign": 0,
+          "interval": [
+            0,
+            1
+          ],
+          "text": "Continue onto 동성로15번길",
+          "time": 43848,
+          "street_name": "동성로15번길"
+        },
+        {
+          "distance": 753.037,
+          "sign": -2,
+          "interval": [
+            1,
+            4
+          ],
+          "text": "Turn left onto 서전로68번길",
+          "time": 542187,
+          "street_name": "서전로68번길"
+        },
+        {
+          "distance": 83.755,
+          "sign": 2,
+          "interval": [
+            4,
+            5
+          ],
+          "text": "Turn right onto 전포대로246번길",
+          "time": 60304,
+          "street_name": "전포대로246번길"
+        },
+        {
+          "distance": 48.444,
+          "sign": -2,
+          "interval": [
+            5,
+            6
+          ],
+          "text": "Turn left onto 동성로",
+          "time": 34879,
+          "street_name": "동성로"
+        },
+        {
+          "distance": 156.413,
+          "sign": 7,
+          "interval": [
+            6,
+            9
+          ],
+          "text": "Keep right onto 동성로96번길",
+          "time": 112618,
+          "street_name": "동성로96번길"
+        },
+        {
+          "distance": 200.83,
+          "sign": -7,
+          "interval": [
+            9,
+            12
+          ],
+          "text": "Keep left onto 동성로96번길",
+          "time": 144598,
+          "street_name": "동성로96번길"
+        },
+        {
+          "distance": 63.28,
+          "sign": -3,
+          "interval": [
+            12,
+            14
+          ],
+          "text": "Turn sharp left onto 진남로",
+          "time": 45562,
+          "street_name": "진남로"
+        },
+        {
+          "distance": 142.206,
+          "sign": 2,
+          "interval": [
+            14,
+            26
+          ],
+          "text": "Turn right",
+          "time": 102388,
+          "street_name": ""
+        },
+        {
+          "distance": 0.0,
+          "sign": 4,
+          "last_heading": 154.40639620980556,
+          "interval": [
+            26,
+            26
+          ],
+          "text": "Arrive at destination",
+          "time": 0,
+          "street_name": ""
+        }
+      ],
+      "details": {
+        "has_elevator": [
+          [
+            0,
+            26,
+            false
+          ]
+        ],
+        "has_curb_gap": [
+          [
+            0,
+            26,
+            false
+          ]
+        ],
+        "has_audio_signal": [
+          [
+            0,
+            26,
+            false
+          ]
+        ],
+        "surface": [
+          [
+            0,
+            12,
+            "missing"
+          ],
+          [
+            12,
+            14,
+            "asphalt"
+          ],
+          [
+            14,
+            26,
+            "missing"
+          ]
+        ],
+        "width_meter": [
+          [
+            0,
+            26,
+            0.0
+          ]
+        ],
+        "crossing": [
+          [
+            0,
+            2,
+            "missing"
+          ],
+          [
+            2,
+            3,
+            "marked"
+          ],
+          [
+            3,
+            5,
+            "missing"
+          ],
+          [
+            5,
+            6,
+            "traffic_signals"
+          ],
+          [
+            6,
+            26,
+            "missing"
+          ]
+        ],
+        "has_braille_block": [
+          [
+            0,
+            26,
+            false
+          ]
+        ]
+      },
+      "ascend": 0.0,
+      "descend": 0.0,
+      "snapped_waypoints": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            129.0666,
+            35.151799
+          ],
+          [
+            129.070058,
+            35.161837
+          ]
+        ]
+      }
+    }
+  ]
+}

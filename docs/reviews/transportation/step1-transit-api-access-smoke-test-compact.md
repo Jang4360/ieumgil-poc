@@ -1,8 +1,8 @@
 # Step 1 Transit API Access Smoke Test Compact Review
 
 - 기준 문서: `AGENTS.md`, `docs/plans/transportation/00_EXECUTION_ROADMAP.md`, `docs/plans/transportation/01_TRANSIT_DATA_SOURCE_SURVEY.md`
-- 작업 일자: 2026-04-14
-- 작업 범위: `부산 BIMS`, `부산 도시철도 열차시각표 조회 서비스` 실제 인증 재검증
+- 작업 일자: 2026-04-15
+- 작업 범위: `부산 BIMS`, `부산교통공사_부산도시철도 운행 정보` 실제 인증 및 최소 조회 재검증
 
 ## 목적
 
@@ -15,10 +15,10 @@
 
 ## 이번 재검증 범위
 
-- 포함: `부산 BIMS`, `부산 도시철도 열차시각표 조회 서비스`
+- 포함: `부산 BIMS`, `부산교통공사_부산도시철도 운행 정보`
 - 제외: `ODsay`
 
-`ODsay`는 이번 요청 범위에서 제외했고, 아래 내용은 공공데이터 API 재검증 결과만 반영한다.
+`ODsay`는 별도 확인이 끝난 상태로 두고, 이 문서는 공공데이터 API 2종 재검증 결과만 반영한다.
 
 ## 수행 내용
 
@@ -42,7 +42,6 @@
 - 같은 키로 `부산시청.시청역` 정류장 1건 이상이 조회됐고, 그중 하나의 `bstopid=164720101`, `arsno=13040`, 좌표 `129.075388596308,35.177897282215`를 확인했다.
 - 같은 키로 `stopArrByBstopid(bstopid=164720101)` 호출 시 `resultCode=00`, `resultMsg=NORMAL SERVICE`
 - 도착정보 응답에서 `lineno`, `lineid`, `min1`, `station1`, `lowplate1`, `min2`, `station2`, `lowplate2` 필드를 확인했다.
-- 샘플 응답 기준으로 `131`, `141` 노선이 조회됐고 두 노선 모두 `lowplate1=1`, `lowplate2=1` 값이 포함됐다.
 
 판단:
 
@@ -50,70 +49,64 @@
 - 현재 `.env` 기준으로는 `DECODING` 키를 그대로 사용하면 정상 호출된다.
 - 현재 상태에서 BIMS는 Step 1의 `버스 정류장 조회`, `실시간 도착시간 조회`, `연결 키 확인` 용도로 사용할 수 있다.
 
-### 2. 부산 도시철도 열차시각표 조회 서비스 검증
+### 2. 부산교통공사_부산도시철도 운행 정보 호출 검증
 
 공식 문서 기준 서비스 정보:
 
-- 서비스URL: `http://data.humetro.busan.kr/voc/api/open_api_process.tnn`
-- 필수 파라미터: `act`, `scode`
-- 옵션 파라미터: `day`, `updown`, `stime`, `etime`, `enum`
+- Base URL: `https://api.odcloud.kr/api`
+- Swagger URL: `https://infuser.odcloud.kr/oas/docs?namespace=15082980/v1`
+- 최신 경로: `/15082980/v1/uddi:e9c28907-a511-428d-b5ec-e1c6c988396a`
 
 검증 대상:
 
-- `open_api_process.tnn`
+- `부산교통공사_부산도시철도 운행 정보_20250714`
 
 입력:
 
-- `act=xml`
-- `scode=101`
-- `day=1`
-- `updown=0`
-- `stime=1300`
-- `etime=1400`
-- `enum=1`
+- `page=1`
+- `perPage=1`
+- `returnType=JSON`
 
 결과:
 
-- `.env`에 `BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_ENCODING`, `BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_DECODING` 값이 존재했다.
-- 이미지 예시와 동일한 요청 형태인 `act=xml`, `scode=101`, `day=1`, `updown=0`, `stime=1300`, `etime=1400`, `enum=1`로 재호출했다.
-- `BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_ENCODING`을 URL에 그대로 붙여 호출해도 XML 응답 기준 `resultCode=30`, `SERVICE KEY IS NOT REGISTERED ERROR.`
-- `BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_DECODING`을 `--data-urlencode`로 전달해도 XML 응답 기준 `resultCode=30`, `SERVICE KEY IS NOT REGISTERED ERROR.`
-- `BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_ENCODING`을 `--data-urlencode`로 전달해도 XML 응답 기준 `resultCode=30`, `SERVICE KEY IS NOT REGISTERED ERROR.`
-- 비교용으로 `act=json`, `enum=1` 조합도 호출했지만 JSON 응답 기준 동일하게 `resultCode=30`, `SERVICE KEY IS NOT REGISTERED ERROR.`
-- HTTP 레벨에서는 모두 `200 OK`로 응답했고, 엔드포인트와 파라미터 구조 자체는 정상 동작한다.
+- `.env`에 `BUSAN_SUBWAY_OPERATION_SERVICE_KEY_ENCODING`, `BUSAN_SUBWAY_OPERATION_SERVICE_KEY_DECODING` 값이 존재했다.
+- `BUSAN_SUBWAY_OPERATION_SERVICE_KEY_ENCODING` 값을 `serviceKey`에 그대로 넣어 호출하면 `{"code":-4,"msg":"등록되지 않은 인증키 입니다."}`가 반환됐다.
+- `BUSAN_SUBWAY_OPERATION_SERVICE_KEY_DECODING` 값을 `--data-urlencode`로 전달하면 `HTTP 200`으로 정상 응답했다.
+- 응답 기준 `currentCount=1`, `totalCount=3833`을 확인했다.
+- `data[0]`에서 `노선명`, `노선번호`, `운행구간기점명`, `운행구간종점명`, `운행구간정거장`, `정거장도착시각`, `정거장출발시각`, `운행속도`, `데이터기준일자` 필드를 확인했다.
+- 샘플 응답 기준 `부산 도시철도 1호선`, `노포 -> 다대포해수욕장` 구간, `운행속도=39.6km/h`, 정거장별 도착/출발 시각 문자열이 내려왔다.
 
 판단:
 
-- 부산 도시철도 열차시각표 조회 서비스는 엔드포인트 접근은 가능하지만, 현재 키가 이 서비스에 등록된 상태로 인식되지 않는다.
-- 문서 예시 파라미터로 바꿔도 결과가 동일하므로, 현재 이슈는 요청 형식보다 `서비스키 등록/매핑 상태`에 가깝다.
-- 이번 재검증에서도 실제 시간표 데이터는 받지 못했다.
-- 현재 상태에서는 Step 1의 `지하철 도착예정 시각 조회용 API 확정`을 완료로 보기 어렵다.
+- 지하철 원천은 더 이상 `Humetro open_api_process.tnn` 기준으로 보지 않고 `odcloud REST` 기준으로 연결해야 한다.
+- 이 데이터셋은 현재 키로 인증과 조회가 가능하다.
+- 호출 시 `Decoding 키를 클라이언트에서 URL 인코딩해서 전달`하는 규칙이 핵심이다.
+- 응답은 실시간 도착예정이 아니라 기준 운행 정보이므로 PoC에서는 `이동시간 보강`, `정거장 시각 후보 파싱`, `노선/정거장 연결 키 확보` 용도로 보는 것이 맞다.
 
 ## API별 상태 요약
 
 | API | 조회 목표 | 호출 결과 | 현재 판단 |
 | --- | --- | --- | --- |
 | 부산 BIMS | 버스 정류장 조회, 실시간 도착시간 조회 | `DECODING` 키 기준 `NORMAL SERVICE` | 사용 가능 |
-| 부산 도시철도 열차시각표 | 역 기준 도착예정 시각 조회 | `SERVICE KEY IS NOT REGISTERED ERROR.` | 활용승인/키 매핑 재확인 필요 |
+| 부산도시철도 운행 정보 | 정거장 도착/출발시각, 운행구간, 운행속도 조회 | `DECODING` 키 + URL 인코딩 기준 `HTTP 200` | 사용 가능 |
 
 ## 확인된 사실
 
 1. 워크스페이스 루트 `.env`에는 실제 공공데이터 키가 들어 있다.
 2. 부산 BIMS는 `ENCODING` 키로는 실패했고, `DECODING` 키는 현재 `.env` 원문 기준으로 정상 호출된다.
 3. 부산 BIMS 응답에서 `bstopid`, `arsno`, 좌표, `lineid`, `lowplate1`, `lowplate2`를 확인했다.
-4. 부산 도시철도 열차시각표 서비스는 문서 예시 파라미터와 다른 전달 방식으로 다시 호출해도 현재 키를 `등록되지 않은 키`로 처리한다.
+4. 부산도시철도 운행 정보는 `ENCODING` 키로 실패하고, `DECODING` 키를 URL 인코딩해서 보낼 때 정상 응답한다.
+5. 지하철 응답에서 `운행구간정거장`, `정거장도착시각`, `정거장출발시각` 문자열을 실제로 확보했다.
 
 ## 현재 단계 판단
 
-`01_TRANSIT_DATA_SOURCE_SURVEY.md` 기준으로 보면 버스 쪽은 Step 1 목적을 충족했고, 지하철 쪽은 아직 인증 정리가 남았다.
+`01_TRANSIT_DATA_SOURCE_SURVEY.md` 기준으로 보면 공공데이터 2종은 모두 Step 1 목적에 맞게 연결 가능 상태를 확인했다.
 
 현재 바로 진행 가능한 다음 작업은 아래 순서가 적절하다.
 
-1. 부산 도시철도 열차시각표
-`15000522` 데이터셋 활용신청 상태와 현재 서비스키 매핑 상태를 다시 확인한다.
-
-2. 지하철 재검증
-키 매핑이 정상화되면 같은 시나리오로 다시 호출해 역 기준 시간표 필드와 도착예정 시각 필드를 확인한다.
+1. `운행구간정거장`, `정거장도착시각`, `정거장출발시각` 파싱 규칙을 정의한다.
+2. ODsay 경로 조회 결과와 BIMS/지하철 응답을 어떻게 결합할지 역할 분담을 정리한다.
+3. 재현 가능한 스모크 테스트 스크립트로 현재 연결 상태를 고정한다.
 
 ## 환경 정리
 
@@ -122,68 +115,27 @@
 - `.env` 존재
 - `BUSAN_BIMS_SERVICE_KEY_ENCODING` 존재
 - `BUSAN_BIMS_SERVICE_KEY_DECODING` 존재
-- `BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_ENCODING` 존재
-- `BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_DECODING` 존재
+- `BUSAN_SUBWAY_OPERATION_SERVICE_KEY_ENCODING` 존재
+- `BUSAN_SUBWAY_OPERATION_SERVICE_KEY_DECODING` 존재
 
 ## 실행 기록
 
 ```bash
-set -a && source .env && set +a
-
-curl -sS -D - -G "$BUSAN_BIMS_API_BASE_URL/busStopList" \
-  --data-urlencode "pageNo=1" \
-  --data-urlencode "numOfRows=3" \
-  --data-urlencode "bstopnm=부산시청" \
-  --data-urlencode "serviceKey=$BUSAN_BIMS_SERVICE_KEY_ENCODING"
-
-curl -sS -D - -G "$BUSAN_BIMS_API_BASE_URL/busStopList" \
+curl -G "https://apis.data.go.kr/6260000/BusanBIMS/busStopList" \
   --data-urlencode "pageNo=1" \
   --data-urlencode "numOfRows=3" \
   --data-urlencode "bstopnm=부산시청" \
   --data-urlencode "serviceKey=$BUSAN_BIMS_SERVICE_KEY_DECODING"
 
-curl -sS -D - -G "$BUSAN_BIMS_API_BASE_URL/busStopList" \
-  --data-urlencode "pageNo=1" \
-  --data-urlencode "numOfRows=3" \
-  --data-urlencode "bstopnm=부산시청" \
-  --data-urlencode "serviceKey=$BUSAN_BIMS_SERVICE_KEY_DECODING"
-
-curl -sS -D - -G "$BUSAN_BIMS_API_BASE_URL/stopArrByBstopid" \
+curl -G "https://apis.data.go.kr/6260000/BusanBIMS/stopArrByBstopid" \
   --data-urlencode "bstopid=164720101" \
   --data-urlencode "serviceKey=$BUSAN_BIMS_SERVICE_KEY_DECODING"
 
-curl -sS -D - \
-  "$BUSAN_SUBWAY_TIMETABLE_API_BASE_URL?act=xml&scode=101&day=1&updown=0&stime=1300&etime=1400&enum=1&serviceKey=$BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_ENCODING"
-
-curl -sS -D - -G "$BUSAN_SUBWAY_TIMETABLE_API_BASE_URL" \
-  --data-urlencode "act=xml" \
-  --data-urlencode "scode=101" \
-  --data-urlencode "day=1" \
-  --data-urlencode "updown=0" \
-  --data-urlencode "stime=1300" \
-  --data-urlencode "etime=1400" \
-  --data-urlencode "enum=1" \
-  --data-urlencode "serviceKey=$BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_ENCODING"
-
-curl -sS -D - -G "$BUSAN_SUBWAY_TIMETABLE_API_BASE_URL" \
-  --data-urlencode "act=xml" \
-  --data-urlencode "scode=101" \
-  --data-urlencode "day=1" \
-  --data-urlencode "updown=0" \
-  --data-urlencode "stime=1300" \
-  --data-urlencode "etime=1400" \
-  --data-urlencode "enum=1" \
-  --data-urlencode "serviceKey=$BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_DECODING"
-
-curl -sS -D - -G "$BUSAN_SUBWAY_TIMETABLE_API_BASE_URL" \
-  --data-urlencode "act=json" \
-  --data-urlencode "scode=101" \
-  --data-urlencode "day=1" \
-  --data-urlencode "updown=0" \
-  --data-urlencode "stime=1300" \
-  --data-urlencode "etime=1400" \
-  --data-urlencode "enum=1" \
-  --data-urlencode "serviceKey=$BUSAN_SUBWAY_TIMETABLE_SERVICE_KEY_DECODING"
+curl -G "https://api.odcloud.kr/api/15082980/v1/uddi:e9c28907-a511-428d-b5ec-e1c6c988396a" \
+  --data-urlencode "page=1" \
+  --data-urlencode "perPage=1" \
+  --data-urlencode "returnType=JSON" \
+  --data-urlencode "serviceKey=$BUSAN_SUBWAY_OPERATION_SERVICE_KEY_DECODING"
 ```
 
 ## 결론
@@ -191,13 +143,11 @@ curl -sS -D - -G "$BUSAN_SUBWAY_TIMETABLE_API_BASE_URL" \
 이번 재검증 기준 Step 1 공공데이터 인증 상태는 아래처럼 정리된다.
 
 - 부산 BIMS: 인증 통과 및 실제 조회 성공
-- 부산 도시철도 열차시각표: 엔드포인트 접근 가능, 인증 미통과
+- 부산도시철도 운행 정보: 인증 통과 및 실제 조회 성공
 
 즉 현재 시점의 핵심 산출물은 아래다.
 
 - 버스 정류장 조회 성공
 - 버스 도착정보 조회 성공
-- 버스 연결 키와 저상버스 관련 필드 확인
-- 지하철 서비스키 미등록 상태 확인
-
-Step 1을 완전히 닫으려면 부산 도시철도 열차시각표 서비스의 키 매핑부터 정상화해야 한다.
+- 지하철 운행 구간 / 정거장 도착시각 / 정거장 출발시각 조회 성공
+- 버스와 지하철 모두 연결 키 및 시간 필드 확보

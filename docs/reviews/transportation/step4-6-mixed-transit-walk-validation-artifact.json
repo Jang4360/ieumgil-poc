@@ -1,0 +1,449 @@
+{
+  "scenario": {
+    "name": "bansong_market_to_osiria_station",
+    "display_name": "반송시장 -> 오시리아역",
+    "start_point": {
+      "lat": 35.226908613652,
+      "lng": 129.148626778943,
+      "label": "반송시장"
+    },
+    "end_point": {
+      "lat": 35.196256,
+      "lng": 129.208291,
+      "label": "오시리아역"
+    }
+  },
+  "path_summaries": [
+    {
+      "path_index": 0,
+      "path_type": 3,
+      "total_time": 42,
+      "payment": 1600,
+      "mode_sequence": [
+        "WALK",
+        "BUS",
+        "WALK",
+        "SUBWAY",
+        "WALK"
+      ],
+      "has_mixed_walk_bus_subway": true
+    },
+    {
+      "path_index": 1,
+      "path_type": 3,
+      "total_time": 50,
+      "payment": 1600,
+      "mode_sequence": [
+        "WALK",
+        "BUS",
+        "WALK",
+        "SUBWAY",
+        "WALK"
+      ],
+      "has_mixed_walk_bus_subway": true
+    },
+    {
+      "path_index": 2,
+      "path_type": 3,
+      "total_time": 48,
+      "payment": 1600,
+      "mode_sequence": [
+        "WALK",
+        "BUS",
+        "WALK",
+        "SUBWAY",
+        "WALK"
+      ],
+      "has_mixed_walk_bus_subway": true
+    }
+  ],
+  "selected_path_index": 0,
+  "selected_path_overview": [
+    {
+      "traffic_type": "WALK",
+      "distance_meter": 12,
+      "section_time_minute": 1
+    },
+    {
+      "traffic_type": "BUS",
+      "distance_meter": 9593,
+      "section_time_minute": 33,
+      "route_no": "기장군11",
+      "start_name": "반송시장",
+      "end_name": "동해선기장역.기장중학교"
+    },
+    {
+      "traffic_type": "WALK",
+      "distance_meter": 233,
+      "section_time_minute": 3
+    },
+    {
+      "traffic_type": "SUBWAY",
+      "distance_meter": 5700,
+      "section_time_minute": 4,
+      "line_name": "동해선",
+      "start_name": "기장",
+      "end_name": "오시리아"
+    },
+    {
+      "traffic_type": "WALK",
+      "distance_meter": 1,
+      "section_time_minute": 1
+    }
+  ],
+  "walk_segments": [
+    {
+      "sequence": 1,
+      "sub_path_index": 0,
+      "role": "ACCESS",
+      "odsay_distance_meter": 12,
+      "odsay_section_time_minute": 1,
+      "start_anchor": {
+        "lat": 35.226908613652,
+        "lng": 129.148626778943,
+        "source": "USER_REQUEST",
+        "label": "반송시장"
+      },
+      "end_anchor": {
+        "lat": 35.227009,
+        "lng": 129.148588,
+        "source": "TRANSIT_START",
+        "label": "반송시장"
+      },
+      "walk_route_request": {
+        "startPoint": {
+          "lat": 35.226908613652,
+          "lng": 129.148626778943
+        },
+        "endPoint": {
+          "lat": 35.227009,
+          "lng": 129.148588
+        },
+        "routeOptions": [
+          "SAFE",
+          "SHORTEST"
+        ]
+      },
+      "graphhopper_results": {
+        "SAFE": {
+          "success": true,
+          "profile": "wheelchair_safe",
+          "distance_meter": 14.911,
+          "estimated_time_minute": 0.18,
+          "instruction_count": 3,
+          "start_snap_distance_meter": 3.9399508589437864,
+          "start_snap_status": "ACCEPT",
+          "end_snap_distance_meter": 3.8214264557473174,
+          "end_snap_status": "ACCEPT",
+          "detail_summary": {
+            "average_slope_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "width_meter_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "has_elevator": false,
+            "has_curb_gap": false,
+            "has_audio_signal": false,
+            "has_braille_block": false,
+            "crossing_values": [
+              "missing"
+            ]
+          }
+        },
+        "SHORTEST": {
+          "success": true,
+          "profile": "wheelchair_shortest",
+          "distance_meter": 14.911,
+          "estimated_time_minute": 0.18,
+          "instruction_count": 3,
+          "start_snap_distance_meter": 3.9399508589437864,
+          "start_snap_status": "ACCEPT",
+          "end_snap_distance_meter": 3.8214264557473174,
+          "end_snap_status": "ACCEPT",
+          "detail_summary": {
+            "average_slope_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "width_meter_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "has_elevator": false,
+            "has_curb_gap": false,
+            "has_audio_signal": false,
+            "has_braille_block": false,
+            "crossing_values": [
+              "missing"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": 2,
+      "sub_path_index": 2,
+      "role": "TRANSFER",
+      "odsay_distance_meter": 233,
+      "odsay_section_time_minute": 3,
+      "start_anchor": {
+        "lat": 35.243524,
+        "lng": 129.216579,
+        "source": "TRANSIT_END",
+        "label": "동해선기장역.기장중학교"
+      },
+      "end_anchor": {
+        "lat": 35.24348095488466,
+        "lng": 129.2186160647464,
+        "source": "SUBWAY_EXIT",
+        "label": "기장 출구 1"
+      },
+      "walk_route_request": {
+        "startPoint": {
+          "lat": 35.243524,
+          "lng": 129.216579
+        },
+        "endPoint": {
+          "lat": 35.24348095488466,
+          "lng": 129.2186160647464
+        },
+        "routeOptions": [
+          "SAFE",
+          "SHORTEST"
+        ]
+      },
+      "graphhopper_results": {
+        "SAFE": {
+          "success": true,
+          "profile": "wheelchair_safe",
+          "distance_meter": 273.324,
+          "estimated_time_minute": 3.28,
+          "instruction_count": 4,
+          "start_snap_distance_meter": 7.177724522774039,
+          "start_snap_status": "ACCEPT",
+          "end_snap_distance_meter": 1.654865014519651,
+          "end_snap_status": "ACCEPT",
+          "detail_summary": {
+            "average_slope_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "width_meter_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "has_elevator": false,
+            "has_curb_gap": false,
+            "has_audio_signal": false,
+            "has_braille_block": false,
+            "crossing_values": [
+              "missing"
+            ]
+          }
+        },
+        "SHORTEST": {
+          "success": true,
+          "profile": "wheelchair_shortest",
+          "distance_meter": 273.324,
+          "estimated_time_minute": 3.28,
+          "instruction_count": 4,
+          "start_snap_distance_meter": 7.177724522774039,
+          "start_snap_status": "ACCEPT",
+          "end_snap_distance_meter": 1.654865014519651,
+          "end_snap_status": "ACCEPT",
+          "detail_summary": {
+            "average_slope_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "width_meter_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "has_elevator": false,
+            "has_curb_gap": false,
+            "has_audio_signal": false,
+            "has_braille_block": false,
+            "crossing_values": [
+              "missing"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": 3,
+      "sub_path_index": 4,
+      "role": "EGRESS",
+      "odsay_distance_meter": 1,
+      "odsay_section_time_minute": 1,
+      "start_anchor": {
+        "lat": 35.19643755487445,
+        "lng": 129.20876906460072,
+        "source": "SUBWAY_EXIT",
+        "label": "오시리아 출구 1"
+      },
+      "end_anchor": {
+        "lat": 35.196256,
+        "lng": 129.208291,
+        "source": "USER_REQUEST",
+        "label": "오시리아역"
+      },
+      "walk_route_request": {
+        "startPoint": {
+          "lat": 35.19643755487445,
+          "lng": 129.20876906460072
+        },
+        "endPoint": {
+          "lat": 35.196256,
+          "lng": 129.208291
+        },
+        "routeOptions": [
+          "SAFE",
+          "SHORTEST"
+        ]
+      },
+      "graphhopper_results": {
+        "SAFE": {
+          "success": true,
+          "profile": "wheelchair_safe",
+          "distance_meter": 44.893,
+          "estimated_time_minute": 0.54,
+          "instruction_count": 2,
+          "start_snap_distance_meter": 15.91013117479958,
+          "start_snap_status": "ACCEPT",
+          "end_snap_distance_meter": 33.54245920888347,
+          "end_snap_status": "WARN",
+          "detail_summary": {
+            "average_slope_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "width_meter_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "has_elevator": false,
+            "has_curb_gap": false,
+            "has_audio_signal": false,
+            "has_braille_block": false,
+            "crossing_values": [
+              "missing"
+            ]
+          }
+        },
+        "SHORTEST": {
+          "success": true,
+          "profile": "wheelchair_shortest",
+          "distance_meter": 44.893,
+          "estimated_time_minute": 0.54,
+          "instruction_count": 2,
+          "start_snap_distance_meter": 15.91013117479958,
+          "start_snap_status": "ACCEPT",
+          "end_snap_distance_meter": 33.54245920888347,
+          "end_snap_status": "WARN",
+          "detail_summary": {
+            "average_slope_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "width_meter_range": {
+              "min": 0.0,
+              "max": 0.0
+            },
+            "has_elevator": false,
+            "has_curb_gap": false,
+            "has_audio_signal": false,
+            "has_braille_block": false,
+            "crossing_values": [
+              "missing"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "bus_accessibility_reviews": [
+    {
+      "route_no": "기장군11",
+      "route_local_id": "5291611000",
+      "board_stop_name": "반송시장",
+      "board_stop_id": "184870102",
+      "alight_stop_name": "동해선기장역.기장중학교",
+      "alight_stop_id": "197740303",
+      "matched_arrival_snapshot": {
+        "lineid": "5291611000",
+        "lineno": "기장군11",
+        "min1": "1",
+        "station1": "1",
+        "lowplate1": "0",
+        "min2": "24",
+        "station2": "27",
+        "lowplate2": "0"
+      },
+      "low_floor_realtime_supported": true,
+      "low_floor_fields_available": true
+    }
+  ],
+  "subway_accessibility_reviews": [
+    {
+      "line_name": "동해선",
+      "start_name": "기장",
+      "end_name": "오시리아",
+      "odcloud_match_status": "UNMATCHED",
+      "odcloud_match_reason": "no odcloud row contains both stations on the same normalized line key",
+      "matched_route_name": null,
+      "matched_route_no": null,
+      "elevator_or_exit_accessibility_supported": false,
+      "note": "Current configured odcloud dataset is operation/timetable oriented and does not expose station elevator or exit accessibility fields."
+    }
+  ],
+  "immediate_accessibility_integration": {
+    "walk_segments": {
+      "route_input_mapping_supported": true,
+      "graphhopper_execution_supported": true,
+      "fields_now": [
+        "distance_meter",
+        "estimated_time_minute",
+        "snap_status",
+        "average_slope_range",
+        "has_elevator",
+        "has_curb_gap",
+        "has_audio_signal",
+        "has_braille_block",
+        "width_meter_range"
+      ]
+    },
+    "bus_segments": {
+      "realtime_arrival_supported": true,
+      "low_floor_realtime_supported": true,
+      "fields_now": [
+        "min1",
+        "station1",
+        "lowplate1",
+        "min2",
+        "station2",
+        "lowplate2"
+      ]
+    },
+    "subway_segments": {
+      "operation_dataset_match_supported": false,
+      "station_accessibility_supported": false,
+      "fields_now": [
+        "line_name",
+        "start_name",
+        "end_name",
+        "matched_route_name",
+        "matched_route_no"
+      ]
+    }
+  },
+  "limitations": [
+    "Selected mixed path uses Donghae line, but current odcloud operation dataset did not match this leg.",
+    "Subway station elevator/exit accessibility fields are not available in the currently configured datasets.",
+    "Walk leg validation used local GraphHopper wheelchair profiles, not a production transit API."
+  ]
+}
