@@ -8,6 +8,7 @@ from pathlib import Path
 
 import osmium
 import psycopg
+from matplotlib.path import Path as MplPath
 
 
 DIRECT_WALK_HIGHWAYS = {"footway", "pedestrian", "path", "steps", "living_street"}
@@ -41,6 +42,60 @@ class EligibleWay:
     rule_bucket: str
 
 
+@dataclass
+class BoundaryArea:
+    polygons: list[list[list[tuple[float, float]]]]
+    min_lat: float
+    min_lon: float
+    max_lat: float
+    max_lon: float
+    name: str | None = None
+    polygon_paths: list[tuple[MplPath, list[MplPath]]] | None = None
+
+    @classmethod
+    def from_geojson(cls, geojson_path: Path) -> "BoundaryArea":
+        payload = json.loads(geojson_path.read_text(encoding="utf-8"))
+        geometry = payload.get("geometry", payload)
+        geometry_type = geometry.get("type")
+        coordinates = geometry.get("coordinates", [])
+
+        if geometry_type == "Polygon":
+            polygons = [cls._normalize_polygon(coordinates)]
+        elif geometry_type == "MultiPolygon":
+            polygons = [cls._normalize_polygon(polygon) for polygon in coordinates]
+        else:
+            raise ValueError(f"Unsupported geometry type: {geometry_type}")
+
+        lats = [lat for polygon in polygons for ring in polygon for _, lat in ring]
+        lons = [lon for polygon in polygons for ring in polygon for lon, _ in ring]
+        properties = payload.get("properties", {})
+        return cls(
+            polygons=polygons,
+            min_lat=min(lats),
+            min_lon=min(lons),
+            max_lat=max(lats),
+            max_lon=max(lons),
+            name=properties.get("display_name") or properties.get("name"),
+            polygon_paths=[
+                (MplPath(polygon[0]), [MplPath(hole) for hole in polygon[1:]]) for polygon in polygons
+            ],
+        )
+
+    @staticmethod
+    def _normalize_polygon(raw_polygon: list[list[list[float]]]) -> list[list[tuple[float, float]]]:
+        return [[(float(lon), float(lat)) for lon, lat in ring] for ring in raw_polygon]
+
+    def contains(self, lat: float, lon: float) -> bool:
+        if not (self.min_lat <= lat <= self.max_lat and self.min_lon <= lon <= self.max_lon):
+            return False
+        for polygon, (outer_path, hole_paths) in zip(self.polygons, self.polygon_paths or []):
+            if outer_path.contains_point((lon, lat), radius=1e-12) and not any(
+                hole_path.contains_point((lon, lat), radius=1e-12) for hole_path in hole_paths
+            ):
+                return True
+        return False
+
+
 def haversine_meter(a: tuple[float, float], b: tuple[float, float]) -> float:
     lat1, lon1 = a
     lat2, lon2 = b
@@ -51,6 +106,17 @@ def haversine_meter(a: tuple[float, float], b: tuple[float, float]) -> float:
     sin_dlon = math.sin(dlon / 2)
     aa = sin_dlat**2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * sin_dlon**2
     return 2 * r * math.atan2(math.sqrt(aa), math.sqrt(1 - aa))
+
+
+def point_on_segment(x: float, y: float, ax: float, ay: float, bx: float, by: float) -> bool:
+    cross = (x - ax) * (by - ay) - (y - ay) * (bx - ax)
+    if abs(cross) > 1e-12:
+        return False
+    dot = (x - ax) * (bx - ax) + (y - ay) * (by - ay)
+    if dot < 0:
+        return False
+    squared_length = (bx - ax) ** 2 + (by - ay) ** 2
+    return dot <= squared_length
 
 
 def parse_numeric(value: str | None) -> float | None:
@@ -109,9 +175,10 @@ def classify_way(tags: dict[str, str]) -> str | None:
 
 
 class NetworkBuilder(osmium.SimpleHandler):
-    def __init__(self):
+    def __init__(self, boundary_area: BoundaryArea | None = None):
         super().__init__()
         self.eligible_ways: list[EligibleWay] = []
+        self.boundary_area = boundary_area
 
     def way(self, w):
         tags = dict(w.tags)
@@ -128,6 +195,11 @@ class NetworkBuilder(osmium.SimpleHandler):
             coords.append((node.location.lat, node.location.lon))
 
         if len(refs) < 2:
+            return
+
+        if self.boundary_area and not any(
+            self.boundary_area.contains(lat, lon) for lat, lon in coords
+        ):
             return
 
         self.eligible_ways.append(
@@ -151,7 +223,9 @@ def linestring_wkt(coords: list[tuple[float, float]]) -> str:
     return "LINESTRING (" + ", ".join(parts) + ")"
 
 
-def build_network(ways: list[EligibleWay]) -> tuple[list[dict], list[dict]]:
+def build_network(
+    ways: list[EligibleWay], boundary_area: BoundaryArea | None = None
+) -> tuple[list[dict], list[dict]]:
     node_ref_counts: Counter[int] = Counter()
     all_node_coords: dict[int, tuple[float, float]] = {}
     for way in ways:
@@ -183,6 +257,10 @@ def build_network(ways: list[EligibleWay]) -> tuple[list[dict], list[dict]]:
             refs = way.refs[start_idx : end_idx + 1]
             coords = way.coords[start_idx : end_idx + 1]
             if len(refs) < 2:
+                continue
+            if refs[0] == refs[-1]:
+                continue
+            if boundary_area and not any(boundary_area.contains(lat, lon) for lat, lon in coords):
                 continue
             length_meter = round(
                 sum(haversine_meter(coords[i], coords[i + 1]) for i in range(len(coords) - 1)), 2
@@ -403,6 +481,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--source", required=True, help="Input sample .osm.pbf")
     parser.add_argument("--output-dir", required=True, help="Output directory")
     parser.add_argument(
+        "--boundary-geojson",
+        help="Optional GeoJSON Polygon/MultiPolygon used to keep only ways intersecting the boundary",
+    )
+    parser.add_argument(
         "--dsn",
         default="postgresql://ieumgil:ieumgil@localhost:5432/ieumgil",
         help="PostgreSQL DSN",
@@ -420,11 +502,12 @@ def main() -> None:
     source = Path(args.source)
     output_dir = Path(args.output_dir)
     schema_sql_path = Path(args.schema_sql)
+    boundary_area = BoundaryArea.from_geojson(Path(args.boundary_geojson)) if args.boundary_geojson else None
 
-    builder = NetworkBuilder()
+    builder = NetworkBuilder(boundary_area=boundary_area)
     builder.apply_file(str(source), locations=True)
 
-    road_nodes, road_segments = build_network(builder.eligible_ways)
+    road_nodes, road_segments = build_network(builder.eligible_ways, boundary_area=boundary_area)
     write_outputs(road_nodes, road_segments, output_dir)
     db_node_count, db_segment_count = insert_into_postgres(
         road_nodes, road_segments, args.dsn, schema_sql_path
@@ -434,6 +517,9 @@ def main() -> None:
     segment_rule_counts = Counter(row["rule_bucket"] for row in road_segments)
 
     print(f"source={source}")
+    if args.boundary_geojson:
+        print(f"boundary_geojson={args.boundary_geojson}")
+        print(f"boundary_name={boundary_area.name or 'unknown'}")
     print(f"eligible_ways={len(builder.eligible_ways)}")
     print(f"way_rule_direct={way_rule_counts.get('direct', 0)}")
     print(f"way_rule_conditional={way_rule_counts.get('conditional', 0)}")
